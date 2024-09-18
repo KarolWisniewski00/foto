@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/e37acf9c2e.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-zinc-950">
+    <header class="flex flex-wrap sm:justify-center flex-col sm:flex-nowrap w-full text-sm pb-3">
+        <div class="w-full max-w-[85rem] mx-auto max-h-[7rem] overflow-hidden items-center justify-center">
+            <img class="w-full h-full" src="{{asset('photo/header.jpg')}}" style="transform: translateY(-30%);">
+        </div>
+        <nav class="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-center my-3">
+
+            <div class="flex flex-col md:flex-row text-center items-center gap-3 md:gap-5 mt-0 md:mt-5 justify-center">
+                <a class="
+                @if(request()->routeIs('index'))
+                font-medium text-yellow-400 focus:outline-none sm:text-sm md:text-xl
+                @else
+                font-medium text-white hover:text-yellow-400 focus:outline-none focus:text-yellow-400 sm:text-sm md:text-xl
+                @endif
+                "
+                    href="{{route('index')}}">
+                    Start
+                </a>
+                <a class="
+                @if(request()->routeIs('offer'))
+                font-medium text-yellow-400 focus:outline-none sm:text-sm md:text-xl
+                @else
+                font-medium text-white hover:text-yellow-400 focus:outline-none focus:text-yellow-400 sm:text-sm md:text-xl
+                @endif
+                "
+                    href="{{route('offer')}}">
+                    Oferta
+                </a>
+                <a class="
+                font-medium text-white hover:text-yellow-400 focus:outline-none focus:text-yellow-400 sm:text-sm md:text-xl
+
+                "
+                    href="#">
+                    Wyślij zdjęcia do wywołania
+                </a>
+                <a class="
+                @if(request()->routeIs('contact'))
+                font-medium text-yellow-400 focus:outline-none sm:text-sm md:text-xl
+                @else
+                font-medium text-white hover:text-yellow-400 focus:outline-none focus:text-yellow-400 sm:text-sm md:text-xl
+                @endif
+                "
+                    href="{{route('contact')}}">
+                    Kontakt
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    @yield('content')
+
+    <footer class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+        <div class="py-6 border-t border-zinc-400">
+            <div class="flex flex-wrap justify-between items-center gap-2">
+                <div>
+                    <a href="https://wibest.pl" class="text-xs text-zinc-200">
+                        © 2024 WIBEST
+                    </a>
+                </div>
+                <!-- End Col -->
+
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
