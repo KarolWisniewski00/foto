@@ -4,7 +4,7 @@
 <div class="px-3 md:px-0">
     <div class="px-3 md:px-0 bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 md:mt-5 flex flex-col md:flex-row md:justify-between gap-3 md:gap-5">
         <div class="flex flex-col justify-center py-3">
-            <h1 class="text-2xl font-bold md:text-3xl md:leading-tight text-yellow-400 text-3xl text-center"><span class="text-red-500">FOTO</span>RABSZTYN</h1>
+            <h1 class="font-bold md:leading-tight text-white text-3xl text-center">FOTO RABSZTYN</h1>
             <p class="text-white text-center md:text-start">ul. Bytomska 94</p>
             <p class="text-white text-center md:text-start mb-5 "><span class="text-zinc-400">41-940</span> Piekary Śląskie</p>
             <a href="tel:322885532" class="hover:text-yellow-400 text-white text-center md:text-start"><i class="fa-solid fa-phone mr-2"></i>32 288 55 32</a>
@@ -18,7 +18,7 @@
     </div>
     <div class="px-3 md:px-0 bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-5 flex flex-row gap-5">
         <div class="rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-5 flex flex-row gap-5 items-center justify-center mb-5">
-            <a href="#"
+            <a href="{{route('form.create')}}"
                 class="text-center md:text-start py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-red-600 text-white hover:bg-red-700 focus:outline-none focus:bg-red-700 disabled:opacity-50 disabled:pointer-events-none">
                 <i class="fa-solid fa-upload mr-2"></i>Wyślij zdjęcia do wywołania przez internet
             </a>

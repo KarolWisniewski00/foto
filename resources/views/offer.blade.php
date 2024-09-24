@@ -2,12 +2,9 @@
 
 @section('content')
 <div>
-    <div class="bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-5 gap-5">
-        <div class="max-w-2xl mx-auto text-center lg:mb-14 pt-14">
-            <h1 class="text-2xl font-bold md:text-3xl md:leading-tight text-yellow-400 text-3xl">OFERTA ŚLUBNO-WESELNA</h1>
-        </div>
-
-        <div class="bg-zinc-900 relative pb-5">
+    <div class="bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-5 gap-5 py-5">
+        <h1 class="font-bold md:leading-tight text-white text-3xl text-center">OFERTA ŚLUBNO-WESELNA</h1>
+        <div class="bg-zinc-900 relative py-5 px-4 md:px-0">
             <!-- Header -->
             <div class="hidden lg:block sticky top-0 start-0 py-2 bg-zinc-900">
                 <!-- Grid -->
@@ -25,7 +22,7 @@
                         <!-- Free Plan -->
                         <div class="h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                             <div>
-                                <span class="font-semibold text-lg text-yellow-300">
+                                <span class="font-semibold text-lg text-white">
                                     Pakiet Mini
                                 </span>
                                 <p class="text-xs text-zinc-400">
@@ -41,7 +38,7 @@
                         <!-- Standard Plan -->
                         <div class="h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                             <div>
-                                <span class="font-semibold text-lg text-red-400">
+                                <span class="font-semibold text-lg text-white">
                                     Standard
                                 </span>
                                 <p class="text-xs text-zinc-400">
@@ -57,7 +54,7 @@
                         <!-- Standard Plus Plan -->
                         <div class="h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                             <div>
-                                <span class="font-semibold text-lg text-green-400">
+                                <span class="font-semibold text-lg text-white">
                                     Pakiet Standard Plus
                                 </span>
                                 <p class="text-xs text-zinc-400">
@@ -73,7 +70,7 @@
                         <!-- Standard 2000 Plan -->
                         <div class="h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                             <div>
-                                <span class="font-semibold text-lg text-purple-400">
+                                <span class="font-semibold text-lg text-white">
                                     Pakiet Standard 2000
                                 </span>
                                 <p class="text-xs text-zinc-400">
@@ -134,7 +131,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-t border-zinc-700 rounded-t-xl">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Pakiet Mini
@@ -147,7 +144,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 md:border-x md:border-t md:border-zinc-700 md:rounded-t-xl ">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard
@@ -160,7 +157,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 md:border-x md:border-t md:border-zinc-700 md:rounded-t-xl ">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard Plus
@@ -173,7 +170,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 rounded-b-xl  md:border-t  md:rounded-t-xl md:rounded-b-none ">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard 2000
@@ -198,7 +195,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-t border-zinc-700 rounded-t-xl md:rounded-t-none md:border-t-0">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Pakiet Mini
@@ -211,7 +208,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard
@@ -224,7 +221,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard Plus
@@ -237,7 +234,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 rounded-b-xl md:rounded-b-none">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard 2000
@@ -262,7 +259,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 rounded-b-xl">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Pakiet Mini
@@ -275,7 +272,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 rounded-b-xl">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard
@@ -288,7 +285,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 rounded-b-xl">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard Plus
@@ -301,7 +298,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 rounded-b-xl">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard 2000
@@ -363,7 +360,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-t border-zinc-700 rounded-t-xl">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Pakiet Mini
@@ -376,7 +373,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-t border-zinc-700 rounded-t-xl">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard
@@ -389,7 +386,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-t border-zinc-700 rounded-t-xl">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard Plus
@@ -402,7 +399,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-t border-zinc-700 rounded-t-xl">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard 2000
@@ -426,7 +423,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Pakiet Mini
@@ -439,7 +436,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard
@@ -452,7 +449,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard Plus
@@ -465,7 +462,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard 2000
@@ -489,7 +486,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Pakiet Mini
@@ -502,7 +499,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard
@@ -515,7 +512,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard Plus
@@ -528,7 +525,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard 2000
@@ -553,7 +550,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Pakiet Mini
@@ -566,7 +563,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard
@@ -579,7 +576,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard Plus
@@ -592,7 +589,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard 2000
@@ -616,7 +613,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Pakiet Mini
@@ -629,7 +626,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard
@@ -642,7 +639,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard Plus
@@ -655,7 +652,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard 2000
@@ -679,7 +676,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 rounded-b-xl">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Pakiet Mini
@@ -692,7 +689,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 rounded-b-xl">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard
@@ -705,7 +702,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 rounded-b-xl">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard Plus
@@ -718,7 +715,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 rounded-b-xl">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard 2000
@@ -772,7 +769,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-t border-zinc-700 rounded-t-xl">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Pakiet Mini
@@ -785,7 +782,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-t border-zinc-700 rounded-t-xl">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard
@@ -798,7 +795,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-t border-zinc-700 rounded-t-xl">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard Plus
@@ -811,7 +808,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-t border-zinc-700 rounded-t-xl">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard 2000
@@ -835,7 +832,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Pakiet Mini
@@ -848,7 +845,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard
@@ -861,7 +858,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard Plus
@@ -874,7 +871,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard 2000
@@ -898,7 +895,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 rounded-b-xl">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Pakiet Mini
@@ -911,7 +908,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 rounded-b-xl">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard
@@ -924,7 +921,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 rounded-b-xl">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard Plus
@@ -937,7 +934,7 @@
                     <!-- End Item -->
 
                     <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 ">
+                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 rounded-b-xl">
                         <div class="grid grid-cols-6 lg:block">
                             <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
                                 Standard 2000
@@ -955,140 +952,84 @@
         </div>
 
     </div>
-    <div class="bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-5 gap-5">
-        <h1 class="text-yellow-400 text-3xl font-bold mb-5">
-            <center>ZDJĘCIA</center>
-        </h1>
-        <div class="flex flex-col">
-            <ul class="space-y-3 text-sm self-start">
-                <li class="flex gap-x-3">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-white">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
+    <div class="bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-5 gap-5 py-5">
+        <h1 class="font-bold md:leading-tight text-white text-3xl text-center">Zdjęcia</h1>
+        <div class="grid grid-cols-2 grid-rows-2 gap-4 w-full mt-5 px-4 md:px-0">
+            <div class=" h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                <div>
+                    <span class="font-semibold text-lg text-white">
+                        Ślubne, komunijne, roczne, chrzest.
                     </span>
-                    <span class="text-zinc-50">
-                        Studyjne: ślubne, komunijne, roczne, chrzest.
-                    </span>
-                </li>
-                <li class="flex gap-x-3">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-white">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50">
-                        Do dokumentów: paszportowe, dowodowe, legtymacyjne, dyplomowe (techniką
-                        cyfrową w 5 min - sam możesz wybrać najlepsze ujęcie)
-                    </span>
-                </li>
-                <li class="flex gap-x-3">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-white">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50">
+                    <p class="text-xs text-zinc-400">
+                        Studyjne
+                    </p>
+                </div>
+            </div>
+            <div class=" h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                <div>
+                    <span class="font-semibold text-lg text-white">
                         Reportażowe
                     </span>
-                </li>
-                <li class="flex gap-x-3">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-white mb-5">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50">
+                </div>
+            </div>
+            <div class="row-start-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                <div>
+                    <span class="font-semibold text-lg text-white">
                         Reklamowe
                     </span>
-                </li>
-
-            </ul>
+                </div>
+            </div>
+            <div class="row-start-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                <div>
+                    <span class="font-semibold text-lg text-white">
+                        Paszportowe, dowodowe, legtymacyjne, dyplomowe
+                    </span>
+                    <p class="text-xs text-zinc-400">
+                        Do dokumentów
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-5 gap-5">
-        <h1 class="text-yellow-400 text-3xl font-bold mb-5">
-            <center>INNE</center>
-        </h1>
-        <div class="flex flex-col">
-            <ul class="space-y-3 text-sm self-start">
-                <li class="flex gap-x-3">
-                    <span
-                        class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-white">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50">
+    <div class="bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-5 gap-5 py-5">
+        <h1 class="font-bold md:leading-tight text-white text-3xl text-center">Inne</h1>
+        <div class="grid grid-cols-2 grid-rows-3 gap-4 w-full mt-5 px-4 md:px-0">
+            <div class=" h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                <div>
+                    <span class="font-semibold text-lg text-white">
                         Reprodukcje i retusz zniszczonych zdjęć
                     </span>
-                </li>
-                <li class="flex gap-x-3">
-                    <span
-                        class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-white">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50">
+                </div>
+            </div>
+            <div class=" h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                <div>
+                    <span class="font-semibold text-lg text-white">
                         Skanowanie i archiwizacja zdjęć i negatywów
                     </span>
-                </li>
-                <li class="flex gap-x-3">
-                    <span
-                        class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-white">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50">
+                </div>
+            </div>
+            <div class=" h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                <div>
+                    <span class="font-semibold text-lg text-white">
                         Zdjęcia z plików i aparatów cyfrowych - również przez internet
                     </span>
-                </li>
-                <li class="flex gap-x-3">
-                    <span
-                        class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-white">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50">
+                </div>
+            </div>
+            <div class=" h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                <div>
+                    <span class="font-semibold text-lg text-white">
                         Archiwizacja kaset VHS,VHS-C, HI-8, miniDV i inne na DVD
                     </span>
-                </li>
-                <li class="flex gap-x-3">
-                    <span
-                        class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-white mb-5">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
+                </div>
+            </div>
+            <div class="col-span-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                <div>
+                    <span class="font-semibold text-lg text-white">
+                        Fotogadżety z Twoim zdjęciem: kubki, koszulki, poszewki, puzzle, breloczki
                     </span>
-                    <span class="text-zinc-50">
-                        Fotogadżety z Twoim zdjęciem:
-                        kubki, koszulki, poszewki, puzzle, breloczki
-                    </span>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
     </div>
-
 </div>
 @endsection

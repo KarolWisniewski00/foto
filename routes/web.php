@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\OfferController;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/offer', [OfferController::class, 'index'])->name('offer');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::get('/create', [FormController::class, 'create'])->name('form.create');
 
 Route::middleware([
     'auth:sanctum',
