@@ -4,16 +4,24 @@
 <div class="px-3 md:px-0">
     <div class="px-3 md:px-0 bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 md:mt-5 flex flex-col md:flex-row md:justify-between gap-3 md:gap-5">
         <div class="flex flex-col justify-center py-3 w-full">
-        <h1 class="font-bold md:leading-tight text-zinc-200 text-3xl text-center">FOTO RABSZTYN</h1>
-            <div class="">
+            <h1 class="font-bold md:leading-tight text-zinc-200 text-3xl text-center">FOTO RABSZTYN</h1>
+            <div>
                 <label for="email" class="block mb-2 text-sm font-medium text-white">Email</label>
                 <input type="email" id="email" class="bg-zinc-800 border border-zinc-800 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" required />
             </div>
-            <div class="">
+            <div>
                 <label for="phone" class="block mb-2 text-sm font-medium text-white">Numer telefonu</label>
                 <input type="text" id="phone" class="bg-zinc-800 border border-zinc-800 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" required />
             </div>
-            <form enctype="multipart/form-data" method="POST" action="{{ route('form.store') }}" id="my-form" class="my-3 grid-cols-5 gap-4 dropzone w-full border-2 border-zinc-700 border-dashed rounded-lg cursor-pointer bg-zinc-900" disabled>
+            <div id="ban" class="my-3 grid-cols-5 gap-4 w-full border-2 border-red-700 border-dashed rounded-lg cursor-pointer bg-zinc-900">
+                <label for="dropzone-file">
+                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                        <i class="fa-solid fa-ban text-xl text-red-400"></i>
+                        <p class="mb-2 text-sm text-red-400"><span class="font-semibold">Uzupełnij Dane Kontaktowe</span> Abyś mógł przesłać zdjęcia</p>
+                    </div>
+                </label>
+            </div>
+            <form id="accept" enctype="multipart/form-data" method="POST" action="{{ route('form.store') }}" id="my-form" class="my-3 grid-cols-5 gap-4 dropzone w-full border-2 border-zinc-700 border-dashed rounded-lg cursor-pointer bg-zinc-900" style="display: none;">
                 @csrf
                 <label for="dropzone-file">
                     <div data-dz-message class="dz-message flex flex-col items-center justify-center pt-5 pb-6">
@@ -25,16 +33,41 @@
                     </div>
                 </label>
             </form>
-
-            <div class="flex flex-col justify-end items-end">
-                <button id="submit-btn" type="submit" class="inline-flex items-center px-10 py-3 bg-green-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-green-800 focus:bg-green-800 active:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition ease-in-out duration-150" disabled>
-                    <i class="fa-solid fa-check mr-2"></i>Zapisz
-                </button>
-            </div>
         </div>
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+    $(document).ready(function() {
+        $('#phone').on('input', function() {
+            // Validate the form fields when user types
+            validateForm();
+        });
+
+        $('#email').on('input', function() {
+            // Validate the form fields when user types
+            validateForm();
+        });
+
+        function validateForm() {
+            const email = $('#email').val();
+            const phone = $('#phone').val();
+            const phonePattern = /^\d{9}$/; // Regular expression for 9 digits
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email pattern
+
+            if (emailPattern.test(email) && phonePattern.test(phone)) {
+                // If both email and phone are valid
+                $('#ban').hide();
+                $('#accept').show();
+            } else {
+                // If not valid, show the ban div
+                $('#ban').show();
+                $('#accept').hide();
+            }
+        }
+    });
+
     Dropzone.options.myAwesomeDropzone = {
         url: "{{ route('form.store') }}", // Poprawny URL do obsługi uploadu
         maxFiles: 100, // Maksymalna liczba plików
