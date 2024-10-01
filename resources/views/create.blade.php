@@ -10,8 +10,42 @@
                 <input type="email" id="email" class="bg-zinc-800 border border-zinc-800 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" required />
             </div>
             <div>
-                <label for="phone" class="block mb-2 text-sm font-medium text-white">Numer telefonu</label>
+                <label for="phone" class="block my-2 text-sm font-medium text-white">Numer telefonu</label>
                 <input type="text" id="phone" class="bg-zinc-800 border border-zinc-800 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" required />
+            </div>
+            <span  class="block mt-2 text-sm font-medium text-white">Format</span>
+            <div class="grid grid-cols-2 gap-4 w-full mt-5 px-4 md:px-0">
+                <div class=" h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            10x15
+                        </span>
+                    </div>
+                </div>
+                <div class=" h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            13x18
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <span  class="block mt-2 text-sm font-medium text-white">Wykończenie</span>
+            <div class="grid grid-cols-2  gap-4 w-full mt-5 px-4 md:px-0">
+                <div class=" h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Błysk
+                        </span>
+                    </div>
+                </div>
+                <div class=" h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Mat
+                        </span>
+                    </div>
+                </div>
             </div>
             <div id="ban" class="my-3 grid-cols-5 gap-4 w-full border-2 border-red-700 border-dashed rounded-lg cursor-pointer bg-zinc-900">
                 <label for="dropzone-file">
@@ -21,6 +55,7 @@
                     </div>
                 </label>
             </div>
+
             <form id="accept" enctype="multipart/form-data" method="POST" action="{{ route('form.store') }}" id="my-form" class="my-3 grid-cols-5 gap-4 dropzone w-full border-2 border-zinc-700 border-dashed rounded-lg cursor-pointer bg-zinc-900" style="display: none;">
                 @csrf
                 <label for="dropzone-file">

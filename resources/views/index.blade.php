@@ -25,9 +25,8 @@
     <div class="px-4 md:px-0 bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-4 flex flex-row gap-4">
         <div class="flex flex-col">
             <p class="text-zinc-50 py-4 text-center md:text-start">
-                Dziś zajmujemy się fotografią studyjną, reportażową, reklamową, cyfrową obróbką zdjęć, skanowaniem,
-                wydrukiem, wideofilmowaniem, jak również sprzedażą art. fotograficznych.
-                - Mamy w ofercie również fogadżety, zdjęcia na porcelance, wydruki na płótnie.
+            Dziś zajmujemy się fotografią studyjną, reportażową, reklamową, cyfrową obróbką zdjęć, skanowaniem, wydrukiem, jak również sprzedażą art. fotograficznych. 
+            Mamy w ofercie również foto gadżety, zdjęcia na porcelance, wydruki na płótnie. Przegrywamy również materiał z kaset  VHS, HI8 itp. na DVD lub Pendrive 
             </p>
             <div class="rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-4 flex flex-row gap-4 items-center justify-center mb-4">
                 <a href="{{route('form.create')}}"
