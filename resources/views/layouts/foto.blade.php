@@ -16,7 +16,7 @@
 
 <body class="bg-zinc-950">
     <header class="flex flex-wrap sm:justify-center flex-col sm:flex-nowrap w-full text-sm">
-        <div class="w-full max-w-[85rem] mx-auto max-h-[7rem] overflow-hidden items-center justify-center">
+        <div class="w-full max-w-[85rem] mx-auto max-h-[7rem] h-min overflow-hidden items-center justify-center">
             <img class="w-full h-full" src="{{asset('photo/header.jpg')}}" style="transform: translateY(-30%);">
         </div>
         <nav class="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-center my-8">
