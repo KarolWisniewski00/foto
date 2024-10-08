@@ -1,8 +1,8 @@
 @extends('layouts.foto')
 
 @section('content')
-<div class="px-3 md:px-0">
-    <div class="px-3 md:px-0 bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 md:mt-5 flex flex-col md:flex-row md:justify-between gap-3 md:gap-5">
+<div class="px-3 lg:px-0">
+    <div class="px-3 lg:px-0 bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 md:mt-5 flex flex-col md:flex-row md:justify-between gap-3 md:gap-5">
         <div class="flex flex-col md:flex-row justify-center py-3 w-full h-full gap-5">
             <img src="{{asset('photo/main.jpg')}}" class="rounded-lg my-2 w-auto h-full">
             <div class="flex flex-col">
@@ -24,7 +24,7 @@
             </div>
         </div>
     </div>
-    <div class="px-3 md:px-0 bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-5 flex flex-col md:flex-row md:justify-between gap-3 md:gap-5">
+    <div class="px-3 lg:px-0 bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-5 flex flex-col md:flex-row md:justify-between gap-3 md:gap-5">
         <div class="flex flex-col justify-center py-3 w-full h-full gap-5">
             <p class="text-zinc-50 text-center md:text-start mt-2">
                 Dziś zajmujemy się fotografią studyjną, reportażową, reklamową, cyfrową obróbką zdjęć, skanowaniem, wydrukiem, jak również sprzedażą art. fotograficznych.
@@ -38,7 +38,7 @@
             </div>
         </div>
     </div>
-    <div class="px-3 md:px-0 bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-5 flex flex-col md:flex-row md:justify-between gap-3 md:gap-5">
+    <div class="px-3 lg:px-0 bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-5 flex flex-col md:flex-row md:justify-between gap-3 md:gap-5">
         <div class="flex flex-col justify-center py-3 w-full h-full gap-5">
             <h1 class="font-bold md:leading-tight text-zinc-200 text-3xl text-center my-2">AKCPTUJEMY PŁATOŚCI</h1>
             <div class="flex flex-row gap-3 md:gap-5">

@@ -1,8 +1,8 @@
 @extends('layouts.foto')
 
 @section('content')
-<div class="px-3 md:px-0">
-    <div class="px-3 md:px-0 bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 md:mt-5 flex flex-col md:justify-between gap-3 md:gap-5 pb-5">
+<div class="px-3 lg:px-0">
+    <div class="px-3 lg:px-0 bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 md:mt-5 flex flex-col md:justify-between gap-3 md:gap-5 pb-5">
         <div class="flex flex-col justify-center py-3">
             <h1 class="font-bold md:leading-tight text-white text-3xl text-center my-2">FOTO RABSZTYN</h1>
         </div>
@@ -21,7 +21,7 @@
 
         </div>
     </div>
-    <div class="px-3 md:px-0 bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-5 flex flex-col gap-5">
+    <div class="px-3 lg:px-0 bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-5 flex flex-col gap-5">
         <div class="flex flex-col justify-center py-3">
             <div class="rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-5 flex flex-row gap-5 items-center justify-center mb-5">
                 <a href="{{route('form.create')}}"

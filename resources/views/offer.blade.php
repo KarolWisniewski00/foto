@@ -1,8 +1,8 @@
 @extends('layouts.foto')
 
 @section('content')
-<div class="px-3 md:px-0">
-    <div class="px-3 md:px-0 bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 md:mt-5 flex flex-col md:flex-row md:justify-between gap-3 md:gap-5">
+<div class="px-3 lg:px-0">
+    <div class="px-3 lg:px-0 bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 md:mt-5 flex flex-col md:flex-row md:justify-between gap-3 md:gap-5">
         <div class="flex flex-col justify-center py-3 w-full">
             <h1 class="font-bold md:leading-tight text-zinc-200 text-3xl text-center my-2">ZDJĘCIA</h1>
             <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-4 md:grid-rows-2 gap-5 w-full mt-5 md:px-0 mb-5">
@@ -46,7 +46,7 @@
             </div>
         </div>
     </div>
-    <div class="px-3 md:px-0 sm:px-4 lg:px-8 bg-zinc-900 flex flex-col md:justify-between rounded-lg max-w-4xl mx-auto mt-5  gap-3 md:gap-5 py-5">
+    <div class="px-3 lg:px-0 sm:px-4 lg:px-8 bg-zinc-900 flex flex-col md:justify-between rounded-lg max-w-4xl mx-auto mt-5  gap-3 md:gap-5 py-5">
         <div class="flex flex-col justify-center py-3 w-full">
             <h1 class="font-bold md:leading-tight text-white text-3xl text-center my-2">INNE</h1>
             <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-3 gap-5 w-full mt-5 mb-5">
@@ -94,1004 +94,260 @@
             </div>
         </div>
     </div>
-    <div class="px-3 md:px-0 sm:px-4 lg:px-8 bg-zinc-900 flex flex-col md:justify-between rounded-lg max-w-4xl mx-auto mt-5  gap-3 md:gap-5 py-5">
+    <div class="px-3 lg:px-0 sm:px-4 lg:px-8 bg-zinc-900 flex flex-col md:justify-between rounded-lg max-w-4xl mx-auto mt-5  gap-3 md:gap-5 py-5">
         <div class="flex flex-col justify-center py-3 w-full gap-5">
             <h1 class="font-bold md:leading-tight text-white text-3xl text-center my-2">OFERTA ŚLUBNO-WESELNA</h1>
-            <h1 class="font-bold md:leading-tight text-white text-xl my-2 md:hidden">PAKIET MINI</h1>
-            <ul class="space-y-5 text-sm self-start md:hidden">
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Sesja studyjna lub plenerowa<br>
-                        ( w dniu ślubu lub w innym dogodnym terminie )
-                    </span>
-                </li>
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Foto-Książka (wg. indywidualnego projektu)
-                    </span>
-                </li>
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Portret na płótnie
-                    </span>
-                </li>
-            </ul>
-            <h1 class="font-bold md:leading-tight text-white text-xl my-2 md:hidden">PAKIET STANDARD</h1>
-            <ul class="space-y-5 text-sm self-start md:hidden">
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Sesja studyjna lub plenerowa<br>
-                        ( w dniu ślubu lub w innym dogodnym terminie )
-                    </span>
-                </li>
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Foto-Książka (wg. indywidualnego projektu)
-                    </span>
-                </li>
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Portret na płótnie
-                    </span>
-                </li>
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Płyta CD/DVD z Waszymi zdjęciami
-                    </span>
-                </li>
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Przygotowania w domu i Błogosławieństwo
-                    </span>
-                </li>
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Reportaż z ceremoni Ślubnej
-                    </span>
-                </li>
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Reportaż z przyjęcia weselnego do<br> pierwszego tańca lub do tortu
-                    </span>
-                </li>
-            </ul>
-            <h1 class="font-bold md:leading-tight text-white text-xl my-2 md:hidden">PAKIET STANDARD PLUS</h1>
-            <ul class="space-y-5 text-sm self-start md:hidden">
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Sesja studyjna lub plenerowa<br>
-                        ( w dniu ślubu lub w innym dogodnym terminie )
-                    </span>
-                </li>
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Foto-Książka (wg. indywidualnego projektu)
-                    </span>
-                </li>
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Portret na płótnie
-                    </span>
-                </li>
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Płyta CD/DVD z Waszymi zdjęciami
-                    </span>
-                </li>
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Przygotowania w domu i Błogosławieństwo
-                    </span>
-                </li>
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Reportaż z ceremoni Ślubnej
-                    </span>
-                </li>
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Reportaż z przyjęcia weselnego do<br> pierwszego tańca lub do tortu
-                    </span>
-                </li>
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Reportaż z przyjęcia weselnego do oczepin
-                    </span>
-                </li>
-            </ul>
-            <h1 class="font-bold md:leading-tight text-white text-xl my-2 md:hidden">PAKIET STANDARD 2000</h1>
-            <ul class="space-y-5 text-sm self-start md:hidden">
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Sesja studyjna lub plenerowa<br>
-                        ( w dniu ślubu lub w innym dogodnym terminie )
-                    </span>
-                </li>
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Foto-Książka (wg. indywidualnego projektu)
-                    </span>
-                </li>
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Portret na płótnie
-                    </span>
-                </li>
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Płyta CD/DVD z Waszymi zdjęciami
-                    </span>
-                </li>
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Przygotowania w domu i Błogosławieństwo
-                    </span>
-                </li>
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Reportaż z ceremoni Ślubnej
-                    </span>
-                </li>
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Reportaż z przyjęcia weselnego do<br> pierwszego tańca lub do tortu
-                    </span>
-                </li>
-                <li class="flex gap-x-5">
-                    <span class="size-5 flex justify-center items-center rounded-full bg-yellow-600 text-zinc-50">
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="text-zinc-50 md:text-xl">
-                        Reportaż z przyjęcia weselnego do oczepin
-                    </span>
-                </li>
-            </ul>
-        </div>
-        <div class="bg-zinc-900 relative py-5 px-4 md:px-0 hidden md:block">
-            <!-- Header -->
-            <div class="hidden lg:block sticky top-0 start-0 py-2 bg-zinc-900">
-                <!-- Grid -->
-                <div class="grid grid-cols-6 gap-6">
-                    <div class="col-span-2">
-                        <!-- Header -->
-                        <div class="h-full">
-                            <!-- Możesz dodać logo lub inny content -->
-                        </div>
-                        <!-- End Header -->
+            <h1 class="font-bold md:leading-tight text-white text-xl my-2">PAKIET MINI</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-4 md:grid-rows-2 gap-5 w-full mt-5 md:px-0 mb-5">
+                <div class=" h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Sesja studyjna lub plenerowa
+                        </span>
+                        <p class="text-xs text-zinc-400">
+                            w dniu ślubu lub w innym dogodnym terminie
+                        </p>
                     </div>
-                    <!-- End Col -->
-
-                    <div class="col-span-1">
-                        <!-- Free Plan -->
-                        <div class="h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
-                            <div>
-                                <span class="font-semibold text-lg text-white">
-                                    Pakiet Mini
-                                </span>
-                                <p class="text-xs text-zinc-400">
-                                    Budżetowy
-                                </p>
-                            </div>
-                        </div>
-                        <!-- End Free Plan -->
-                    </div>
-                    <!-- End Col -->
-
-                    <div class="col-span-1">
-                        <!-- Standard Plan -->
-                        <div class="h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
-                            <div>
-                                <span class="font-semibold text-lg text-white">
-                                    Standard
-                                </span>
-                                <p class="text-xs text-zinc-400">
-                                    Bestseller
-                                </p>
-                            </div>
-                        </div>
-                        <!-- End Standard Plan -->
-                    </div>
-                    <!-- End Col -->
-
-                    <div class="col-span-1">
-                        <!-- Standard Plus Plan -->
-                        <div class="h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
-                            <div>
-                                <span class="font-semibold text-lg text-white">
-                                    Pakiet Standard Plus
-                                </span>
-                                <p class="text-xs text-zinc-400">
-                                    Powiększony
-                                </p>
-                            </div>
-                        </div>
-                        <!-- End Standard Plus Plan -->
-                    </div>
-                    <!-- End Col -->
-
-                    <div class="col-span-1">
-                        <!-- Standard 2000 Plan -->
-                        <div class="h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
-                            <div>
-                                <span class="font-semibold text-lg text-white">
-                                    Pakiet Standard 2000
-                                </span>
-                                <p class="text-xs text-zinc-400">
-                                    Premium
-                                </p>
-                            </div>
-                        </div>
-                        <!-- End Standard 2000 Plan -->
-                    </div>
-                    <!-- End Col -->
                 </div>
-                <!-- End Grid -->
-            </div>
-            <!-- End Header -->
-
-            <!-- Section -->
-            <div class="space-y-4 lg:space-y-0">
-                <!-- List -->
-                <ul class="grid lg:grid-cols-6 lg:gap-6">
-                    <!-- Item -->
-                    <li class="lg:col-span-2 lg:py-3">
-                        <span class="text-lg font-semibold text-zinc-100 ">
-                            Zawiera
+                <div class="row-start-4 md:row-start-1 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Foto-Książka
                         </span>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="hidden lg:block lg:col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center">
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="hidden lg:block lg:col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center">
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="hidden lg:block lg:col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center">
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="hidden lg:block lg:col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center">
-                    </li>
-                    <!-- End Item -->
-                </ul>
-                <!-- End List -->
-
-                <!-- List -->
-                <ul class="grid lg:grid-cols-6 lg:gap-6">
-                    <!-- Item -->
-                    <li class="lg:col-span-2 pb-1.5 lg:py-3">
-                        <span class="text-sm text-zinc-100 ">
-                            Sesja studyjna lub plenerowa ( w dniu ślubu lub w innym dogodnym terminie )
+                    </div>
+                </div>
+                <div class="row-start-3 md:row-start-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            wg. indywidualnego projektu
                         </span>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-t border-zinc-700 rounded-t-xl">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Pakiet Mini
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 md:border-x md:border-t md:border-zinc-700 md:rounded-t-xl ">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 md:border-x md:border-t md:border-zinc-700 md:rounded-t-xl ">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard Plus
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 rounded-b-xl  md:border-t  md:rounded-t-xl md:rounded-b-none ">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard 2000
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-                </ul>
-                <!-- End List -->
-
-                <!-- List -->
-                <ul class="grid lg:grid-cols-6 lg:gap-6">
-                    <!-- Item -->
-                    <li class="lg:col-span-2 pb-1.5 lg:py-3">
-                        <span class="text-sm text-zinc-100 ">
-                            Foto-Książka (wg. indywidualnego projektu)
-                        </span>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-t border-zinc-700 rounded-t-xl md:rounded-t-none md:border-t-0">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Pakiet Mini
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard Plus
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 rounded-b-xl md:rounded-b-none">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard 2000
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-                </ul>
-                <!-- End List -->
-
-                <!-- List -->
-                <ul class="grid lg:grid-cols-6 lg:gap-6">
-                    <!-- Item -->
-                    <li class="lg:col-span-2 pb-1.5 lg:py-3">
-                        <span class="text-sm text-zinc-100 ">
+                    </div>
+                </div>
+                <div class="row-start-2 md:row-start-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
                             Portret na płótnie
                         </span>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 rounded-b-xl">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Pakiet Mini
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 rounded-b-xl">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 rounded-b-xl">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard Plus
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 rounded-b-xl">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard 2000
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-                </ul>
-                <!-- End List -->
+                    </div>
+                </div>
             </div>
-            <!-- End Section -->
-
-
-
-            <!-- Section -->
-            <div class="mt-6 space-y-4 lg:space-y-0">
-                <!-- List -->
-                <ul class="grid lg:grid-cols-6 lg:gap-6">
-                    <!-- Item -->
-                    <li class="lg:col-span-2 lg:py-3">
-                        <span class="text-lg font-semibold text-zinc-800 ">
+            <h1 class="font-bold md:leading-tight text-white text-xl my-2">PAKIET STANDARD</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-8 md:grid-rows-2 gap-5 w-full mt-5 md:px-0 mb-5">
+                <div class=" h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Sesja studyjna lub plenerowa
                         </span>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="hidden lg:block lg:col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center">
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="hidden lg:block lg:col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center">
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="hidden lg:block lg:col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center">
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="hidden lg:block lg:col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center">
-                    </li>
-                    <!-- End Item -->
-                </ul>
-                <!-- End List -->
-
-                <!-- List -->
-                <ul class="grid lg:grid-cols-6 lg:gap-6">
-                    <!-- Item -->
-                    <li class="lg:col-span-2 pb-1.5 lg:py-3">
-                        <span class="text-sm text-zinc-100 ">
+                        <p class="text-xs text-zinc-400">
+                            w dniu ślubu lub w innym dogodnym terminie
+                        </p>
+                    </div>
+                </div>
+                <div class="row-start-4 md:row-start-1 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Foto-Książka
+                        </span>
+                    </div>
+                </div>
+                <div class="row-start-3 md:row-start-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            wg. indywidualnego projektu
+                        </span>
+                    </div>
+                </div>
+                <div class="row-start-2 md:row-start-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Portret na płótnie
+                        </span>
+                    </div>
+                </div>
+                <div class="row-start-5 md:row-start-3 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
                             Płyta CD/DVD z Waszymi zdjęciami
                         </span>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-t border-zinc-700 rounded-t-xl">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Pakiet Mini
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-zinc-400 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-t border-zinc-700 rounded-t-xl">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-t border-zinc-700 rounded-t-xl">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard Plus
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-t border-zinc-700 rounded-t-xl">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard 2000
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-                </ul>
-                <!-- End List -->
-                <!-- List -->
-                <ul class="grid lg:grid-cols-6 lg:gap-6">
-                    <!-- Item -->
-                    <li class="lg:col-span-2 pb-1.5 lg:py-3">
-                        <span class="text-sm text-zinc-100 ">
+                    </div>
+                </div>
+                <div class="row-start-6 md:row-start-3 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
                             Przygotowania w domu i Błogosławieństwo
                         </span>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Pakiet Mini
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-zinc-400 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard Plus
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard 2000
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-                </ul>
-                <!-- End List -->
-                <!-- List -->
-                <ul class="grid lg:grid-cols-6 lg:gap-6">
-                    <!-- Item -->
-                    <li class="lg:col-span-2 pb-1.5 lg:py-3">
-                        <span class="text-sm text-zinc-100 ">
+                    </div>
+                </div>
+                <div class="row-start-7 md:row-start-4 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
                             Reportaż z ceremoni Ślubnej
                         </span>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Pakiet Mini
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-zinc-400 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard Plus
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard 2000
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-                </ul>
-                <!-- End List -->
-
-                <!-- List -->
-                <ul class="grid lg:grid-cols-6 lg:gap-6">
-                    <!-- Item -->
-                    <li class="lg:col-span-2 pb-1.5 lg:py-3">
-                        <span class="text-sm text-zinc-100 ">
-                            Reportaż z przyjęcia weselnego do pierwszego tańca lub do tortu
+                    </div>
+                </div>
+                <div class="row-start-8 md:row-start-4 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Reportaż z przyjęcia weselnego
                         </span>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Pakiet Mini
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-zinc-400 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard Plus
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard 2000
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-                </ul>
-                <!-- End List -->
-                <!-- List -->
-                <ul class="grid lg:grid-cols-6 lg:gap-6">
-                    <!-- Item -->
-                    <li class="lg:col-span-2 pb-1.5 lg:py-3">
-                        <span class="text-sm text-zinc-100 ">
-                            Reportaż z przyjęcia weselnego do oczepin
-                        </span>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700 rounded-b-xl">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Pakiet Mini
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-zinc-400 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700  rounded-b-xl">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-zinc-400 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700  rounded-b-xl">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard Plus
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-
-                    <!-- Item -->
-                    <li class="col-span-1 py-1.5 lg:py-3 px-4 lg:px-0 lg:text-center bg-zinc-800 border-x border-zinc-700  rounded-b-xl">
-                        <div class="grid grid-cols-6 lg:block">
-                            <span class="lg:hidden col-span-2 font-semibold text-sm text-zinc-100 ">
-                                Standard 2000
-                            </span>
-                            <svg class="shrink-0 lg:mx-auto size-5 text-red-600 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                    </li>
-                    <!-- End Item -->
-                </ul>
-
-                <!-- End List -->
+                        <p class="text-xs text-zinc-400">
+                            do pierwszego tańca lub do tortu
+                        </p>
+                    </div>
+                </div>
             </div>
-            <!-- End Section -->
-        </div>
 
+            <h1 class="font-bold md:leading-tight text-white text-xl my-2">PAKIET STANDARD PLUS</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-9 md:grid-rows-2 gap-5 w-full mt-5 md:px-0 mb-5">
+                <div class=" h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Sesja studyjna lub plenerowa
+                        </span>
+                        <p class="text-xs text-zinc-400">
+                            w dniu ślubu lub w innym dogodnym terminie
+                        </p>
+                    </div>
+                </div>
+                <div class="row-start-4 md:row-start-1 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Foto-Książka
+                        </span>
+                    </div>
+                </div>
+                <div class="row-start-3 md:row-start-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            wg. indywidualnego projektu
+                        </span>
+                    </div>
+                </div>
+                <div class="row-start-2 md:row-start-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Portret na płótnie
+                        </span>
+                    </div>
+                </div>
+                <div class="row-start-5 md:row-start-3 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Płyta CD/DVD z Waszymi zdjęciami
+                        </span>
+                    </div>
+                </div>
+                <div class="row-start-6 md:row-start-3 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Przygotowania w domu i Błogosławieństwo
+                        </span>
+                    </div>
+                </div>
+                <div class="row-start-7 md:row-start-4 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Reportaż z ceremoni Ślubnej
+                        </span>
+                    </div>
+                </div>
+                <div class="row-start-8 md:row-start-4 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Reportaż z przyjęcia weselnego
+                        </span>
+                        <p class="text-xs text-zinc-400">
+                            do pierwszego tańca lub do tortu
+                        </p>
+                    </div>
+                </div>
+                <div class="row-start-9 md:row-start-5 md:col-span-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Reportaż z przyjęcia weselnego
+                        </span>
+                        <p class="text-xs text-zinc-400">
+                            do pierwszego tańca lub do tortu
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <h1 class="font-bold md:leading-tight text-white text-xl my-2">PAKIET STANDARD 2000</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-9 md:grid-rows-2 gap-5 w-full mt-5 md:px-0 mb-5">
+                <div class=" h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Sesja studyjna lub plenerowa
+                        </span>
+                        <p class="text-xs text-zinc-400">
+                            w dniu ślubu lub w innym dogodnym terminie
+                        </p>
+                    </div>
+                </div>
+                <div class="row-start-4 md:row-start-1 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Foto-Książka
+                        </span>
+                    </div>
+                </div>
+                <div class="row-start-3 md:row-start-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            wg. indywidualnego projektu
+                        </span>
+                    </div>
+                </div>
+                <div class="row-start-2 md:row-start-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Portret na płótnie
+                        </span>
+                    </div>
+                </div>
+                <div class="row-start-5 md:row-start-3 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Płyta CD/DVD z Waszymi zdjęciami
+                        </span>
+                    </div>
+                </div>
+                <div class="row-start-6 md:row-start-3 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Przygotowania w domu i Błogosławieństwo
+                        </span>
+                    </div>
+                </div>
+                <div class="row-start-7 md:row-start-4 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Reportaż z ceremoni Ślubnej
+                        </span>
+                    </div>
+                </div>
+                <div class="row-start-8 md:row-start-4 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Reportaż z przyjęcia weselnego
+                        </span>
+                        <p class="text-xs text-zinc-400">
+                            do pierwszego tańca lub do tortu
+                        </p>
+                    </div>
+                </div>
+                <div class="row-start-9 md:row-start-5 md:col-span-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+                    <div>
+                        <span class="font-semibold text-lg text-white">
+                            Reportaż z przyjęcia weselnego
+                        </span>
+                        <p class="text-xs text-zinc-400">
+                            do pierwszego tańca lub do tortu
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection

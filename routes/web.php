@@ -23,11 +23,14 @@ Route::get('/offer', [OfferController::class, 'index'])->name('offer');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/create', [FormController::class, 'create'])->name('form.create');
 Route::post('/store', [FormController::class, 'store'])->name('form.store');
+Route::delete('/delete/{photo}', [FormController::class, 'delete'])->name('photo.delete');
+Route::get('/download/{photo}', [FormController::class, 'download'])->name('photo.download');
 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [AdminController::class, 'group'])->name('dashboard');
+    Route::get('/group', [AdminController::class, 'index'])->name('group');
 });

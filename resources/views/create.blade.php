@@ -2,8 +2,8 @@
 
 @section('content')
 @csrf
-<div class="px-3 md:px-0">
-    <div class="px-3 md:px-0 bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 md:mt-5 flex flex-col md:flex-row md:justify-between gap-3 md:gap-5">
+<div class="px-3 lg:px-0">
+    <div class="px-3 lg:px-0 bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 md:mt-5 flex flex-col md:flex-row md:justify-between gap-3 md:gap-5">
         <div class="flex flex-col justify-center py-3 w-full">
             <h1 class="font-bold md:leading-tight text-zinc-200 text-3xl text-center my-2">FOTO RABSZTYN</h1>
             <div>
@@ -16,26 +16,67 @@
             </div>
             <span class="block my-2 text-sm font-medium text-white">Format</span>
             <div class="grid grid-cols-2 gap-4 w-full my-2">
-                <div>
-                    <input name="format2" type="radio" id="format" value="10x15" checked class="hidden peer">
-                    <label for="format" class=" h-full p-4 border-2 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl cursor-pointer peer-checked:border-yellow-500 peer-checked:bg-zinc-900 hover:bg-zinc-900">
-                        <div>
-                            <span class="font-semibold text-lg text-white">
+                <div class="hs-dropdown relative inline-flex w-full">
+                    <button id="hs-dropdown-default" type="button" class="min-h-24 sm:min-h-fit hs-dropdown-toggle w-full text-center md:text-start py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent text-black bg-yellow-500 hover:bg-yellow-400 focus:outline-none focus:bg-yellow-400 disabled:opacity-50 disabled:pointer-events-none" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+                        <i class="fa-solid fa-arrow-right mr-2"></i>Kliknij aby wybrać format
+                    </button>
+                    <div id="hs-dropdown-menu" class="hs-dropdown-menu transition-opacity duration-300 opacity-0 invisible absolute left-0 min-w-full bg-white shadow-md rounded-lg mt-24 sm:mt-16 dark:bg-neutral-800 dark:border dark:border-neutral-700 dark:divide-neutral-700" role="menu" aria-orientation="vertical" aria-labelledby="hs-dropdown-default">
+                        <div class="p-1 space-y-0.5">
+                            <a class="format-option flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700" href="#" data-value="10x15">
                                 10x15
-                            </span>
-                        </div>
-                    </label>
-                </div>
-                <div>
-                    <input name="format2" type="radio" id="format2" value="13x18" class="hidden peer">
-                    <label for="format2" class=" h-full p-4 border-2 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl cursor-pointer peer-checked:border-yellow-500 peer-checked:bg-zinc-900 hover:bg-zinc-900">
-                        <div>
-                            <span class="font-semibold text-lg text-white">
+                            </a>
+                            <a class="format-option flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700" href="#" data-value="13x18">
                                 13x18
-                            </span>
+                            </a>
                         </div>
-                    </label>
+                    </div>
                 </div>
+                <div class="h-full p-4 border-2 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl cursor-pointer peer-checked:border-yellow-500 peer-checked:bg-zinc-900 hover:bg-zinc-900">
+                    <span class="font-semibold text-lg text-white">
+                        Wybrano format: <span id="selected-format">Brak</span>
+                    </span>
+                </div>
+
+                <script>
+                    document.getElementById('hs-dropdown-default').addEventListener('click', function() {
+                        const dropdownMenu = document.getElementById('hs-dropdown-menu');
+                        if (dropdownMenu.classList.contains('invisible')) {
+                            dropdownMenu.classList.remove('invisible', 'opacity-0');
+                            dropdownMenu.classList.add('visible', 'opacity-100');
+                        } else {
+                            dropdownMenu.classList.remove('visible', 'opacity-100');
+                            dropdownMenu.classList.add('invisible', 'opacity-0');
+                        }
+                    });
+
+                    // Zamknij dropdown po kliknięciu poza nim
+                    document.addEventListener('click', function(e) {
+                        const button = document.getElementById('hs-dropdown-default');
+                        const dropdownMenu = document.getElementById('hs-dropdown-menu');
+                        if (!button.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                            dropdownMenu.classList.remove('visible', 'opacity-100');
+                            dropdownMenu.classList.add('invisible', 'opacity-0');
+                        }
+                    });
+
+                    // Obsługa wyboru opcji
+                    document.querySelectorAll('.format-option').forEach(option => {
+                        option.addEventListener('click', function(e) {
+                            e.preventDefault(); // Zapobiega przeładowaniu strony
+
+                            const selectedFormat = this.getAttribute('data-value');
+                            document.getElementById('selected-format').textContent = selectedFormat;
+
+                            // Zamykanie menu po wyborze
+                            const dropdownMenu = document.getElementById('hs-dropdown-menu');
+                            dropdownMenu.classList.remove('visible', 'opacity-100');
+                            dropdownMenu.classList.add('invisible', 'opacity-0');
+                        });
+                    });
+                </script>
+
+
+
             </div>
             <span class="block my-2 text-sm font-medium text-white">Wykończenie</span>
             <div class="grid grid-cols-2  gap-4 w-full my-2">
