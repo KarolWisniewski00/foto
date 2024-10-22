@@ -40,7 +40,7 @@
     </div>
     <div class="px-3 lg:px-0 bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-5 flex flex-col md:flex-row md:justify-between gap-3 md:gap-5">
         <div class="flex flex-col justify-center py-3 w-full h-full gap-5">
-            <h1 class="font-bold md:leading-tight text-zinc-200 text-3xl text-center my-2">AKCPTUJEMY PŁATOŚCI</h1>
+            <h1 class="font-bold md:leading-tight text-zinc-200 text-3xl text-center my-2">AKCEPTUJEMY PŁATOŚCI</h1>
             <div class="flex flex-row gap-3 md:gap-5">
                 <div class="flex w-full items-center justify-center flex-col my-2">
                     <div>

@@ -5,117 +5,168 @@
 <div class="px-3 lg:px-0">
     <div class="px-3 lg:px-0 bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 md:mt-5 flex flex-col md:flex-row md:justify-between gap-3 md:gap-5">
         <div class="flex flex-col justify-center py-3 w-full">
-            <h1 class="font-bold md:leading-tight text-zinc-200 text-3xl text-center my-2">FOTO RABSZTYN</h1>
+            <h1 class="font-bold md:leading-tight text-zinc-200 text-3xl text-center my-2">PODSUMOWANIE ZAMÓWIENIA</h1>
+            <h1 class="font-bold md:leading-tight text-white text-xl my-2 text-center">Wybierz kolejne zdjęcia, zmień rozmiar lub ilość odbitek.</h1>
+            <div class="grid grid-cols-1 gap-4 w-full my-2">
+                <div>
+                    <button type="button" class="hover:cursor-default w-full h-full p-4 flex flex-row justify-between bg-zinc-800 border border-zinc-700 rounded-xl cursor-pointer peer-checked:border-yellow-500 peer-checked:bg-zinc-900 hover:bg-zinc-900">
+                        <div class="w-1/2 flex flex-col items-start">
+                            <span class="font-semibold text-lg text-white">
+                                Nazwa
+                            </span>
+                            <p class="text-xs text-zinc-400">
+                                1,20 zł/odbitka
+                            </p>
+                        </div>
+                        <div class="w-1/2 flex flex-col items-end">
+                            <span class="font-semibold text-lg text-white">
+                                1,20 zł
+                            </span>
+                        </div>
+                    </button>
+                </div>
+                <div>
+                    <button type="button" class="hover:cursor-default w-full h-full p-4 flex flex-row justify-between bg-zinc-800 border border-zinc-700 rounded-xl cursor-pointer peer-checked:border-yellow-500 peer-checked:bg-zinc-900 hover:bg-zinc-900">
+                        <div class="w-1/2 flex flex-col items-start">
+                            <span class="font-semibold text-lg text-white">
+                                RAZEM
+                            </span>
+                            <p class="text-xs text-zinc-400">
+                                Odbitki 5 szt
+                            </p>
+                        </div>
+                        <div class="w-1/2 flex flex-col items-end">
+                            <span class="font-semibold text-lg text-white">
+                                6,00 zł
+                            </span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <h1 class="font-bold md:leading-tight text-zinc-200 text-3xl text-center my-2">DOSTAWA I PŁATNOŚĆ</h1>
+            <div class="grid grid-cols-1 gap-4 w-full my-2">
+                <div>
+                    <input name="ending2" type="radio" id="ending" value="1" checked class="hidden peer">
+                    <label for="ending" class=" h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl cursor-pointer peer-checked:border-yellow-500 peer-checked:bg-zinc-900 hover:bg-zinc-900">
+                        <div>
+                            <span class="font-semibold text-lg text-white">
+                                Odbiór osobisty
+                            </span>
+                        </div>
+                        <div>
+                            <p class="text-xs text-zinc-400">
+                                W godzinach pracy FOTO RABSZTYN
+                            </p>
+                        </div>
+                    </label>
+                </div>
+                <div class="relative">
+                    <input name="ending2" type="radio" value="2" disabled class="hidden peer">
+                    <label for="ending" class="disabled h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl cursor-pointer peer-checked:border-yellow-500 peer-checked:bg-zinc-900 hover:bg-zinc-900 relative">
+                        <div>
+                            <span class="font-semibold text-lg text-white">
+                                Odbiór osobisty + Płatność online
+                            </span>
+                        </div>
+                        <div>
+                            <p class="text-xs text-zinc-400">
+                                W godzinach pracy FOTO RABSZTYN
+                            </p>
+                        </div>
+                        <!-- Nakładka z napisem WKRÓTCE DOSTĘPNE -->
+                        <div class="overlay md:leading-tight rounded-lg absolute inset-0 bg-black text-center bg-opacity-75 flex items-center justify-center text-white text-xl font-bold">
+                            WKRÓTCE DOSTĘPNE
+                        </div>
+                    </label>
+                </div>
+
+            </div>
             <div>
                 <label for="email" class="block my-2 text-sm font-medium text-white">Email</label>
-                <input type="email" id="email" class="my-2 bg-zinc-800 border border-zinc-800 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" required />
+                <input type="email" id="email" class="my-2 bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" required />
             </div>
             <div>
                 <label for="phone" class="block my-2 text-sm font-medium text-white">Numer telefonu</label>
-                <input type="text" id="phone" class=" my-2 bg-zinc-800 border border-zinc-800 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" required />
+                <input type="text" id="phone" class=" my-2 bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" required />
             </div>
-            <span class="block my-2 text-sm font-medium text-white">Format</span>
-            <div class="grid grid-cols-2 gap-4 w-full my-2">
-                <div class="hs-dropdown relative inline-flex w-full">
-                    <button id="hs-dropdown-default" type="button" class="min-h-24 sm:min-h-fit hs-dropdown-toggle w-full text-center md:text-start py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent text-black bg-yellow-500 hover:bg-yellow-400 focus:outline-none focus:bg-yellow-400 disabled:opacity-50 disabled:pointer-events-none" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
-                        <i class="fa-solid fa-arrow-right mr-2"></i>Kliknij aby wybrać format
-                    </button>
-                    <div id="hs-dropdown-menu" class="hs-dropdown-menu transition-opacity duration-300 opacity-0 invisible absolute left-0 min-w-full bg-white shadow-md rounded-lg mt-24 sm:mt-16 dark:bg-neutral-800 dark:border dark:border-neutral-700 dark:divide-neutral-700" role="menu" aria-orientation="vertical" aria-labelledby="hs-dropdown-default">
-                        <div class="p-1 space-y-0.5">
-                            <a class="format-option flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700" href="#" data-value="10x15">
-                                10x15
-                            </a>
-                            <a class="format-option flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700" href="#" data-value="13x18">
-                                13x18
-                            </a>
+            <div>
+                <label for="phone" class="block my-2 text-sm font-medium text-white">Imię i nazwisko</label>
+                <input type="text" id="phone" class=" my-2 bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" required />
+            </div>
+            <div>
+                <label for="phone" class="block my-2 text-sm font-medium text-white">Adres</label>
+                <input type="text" id="phone" class=" my-2 bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" required />
+            </div>
+
+            <div class="flex flex-row justify-center items-middle gap-4">
+                <div class="w-fit">
+                    <label for="phone" class="block my-2 text-sm font-medium text-white">Kod Pocztowy</label>
+                    <input type="text" id="phone" class=" my-2 bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" required />
+                </div>
+                <div class="w-full">
+                    <label for="phone" class="block my-2 text-sm font-medium text-white">Miasto</label>
+                    <input type="text" id="phone" class=" my-2 bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" required />
+                </div>
+            </div>
+
+            <div class="rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-4 flex flex-row gap-4 items-center justify-center mb-4 w-full">
+                <button type="button"
+                    class="text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-green-600 text-green-50 hover:bg-green-700 focus:outline-none focus:bg-green-700 disabled:opacity-50 disabled:pointer-events-none">
+                    <i class="fa-solid fa-check mr-2"></i>Złóż zamówienie
+                </button>
+                <button type="button"
+                    class="text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-zinc-600 text-zinc-50 hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none">
+                    <i class="fa-solid fa-xmark mr-2"></i>Anuluj zamówienie
+                </button>
+            </div>
+            <div class="rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-4 flex flex-row gap-4 items-center justify-center mb-4 w-full">
+                <button type="button" id="openDrawerBtn"
+                    class="params text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-purple-600 text-purple-50 hover:bg-purple-700 focus:outline-none focus:bg-purple-700 disabled:opacity-50 disabled:pointer-events-none">
+                    <i class="fa-solid fa-forward mr-2"></i>Zmień parametry następnych zdjęć
+                </button>
+                <button type="button"
+                    class="params text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-zinc-600 text-zinc-50 hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none">
+                    <i class="fa-solid fa-layer-group mr-2"></i>Edytuj wszystkie
+                </button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="p-4 w-full h-full bg-zinc-800 rounded-lg border border-zinc-700 hover:bg-zinc-900">
+                    <img class="" alt="" src="{{asset('photo/main.jpg')}}">
+                    <div class="flex flex-col gap-4">
+                        <div class="w-full">
+                            <label for="countries" class="block mt-2 mb-4 text-sm font-medium text-white">Rozmiar</label>
+                            <select id="countries" class="bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                <option selected>10x15 cm</option>
+                            </select>
                         </div>
+                        <div class="w-full">
+                            <label for="countries" class="block mb-4 text-sm font-medium text-white">Wykończenie</label>
+                            <select id="countries" class="bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                <option selected>Błysk</option>
+                                <option value="">Mat</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="hs-trailing-button-add-on-multiple-add-ons" class="block mb4 text-sm font-medium text-white">Odbitki</label>
+                            <div class="flex rounded-lg bg-zinc-800 border border-zinc-700 ">
+                                <input type="text" id="hs-trailing-button-add-on-multiple-add-ons" name="hs-trailing-button-add-on-multiple-add-ons" class="text-white p-2.5 block w-full bg-zinc-800 text-sm focus:z-10 focus:ring-red-500 focus:border-red-500">
+                                <button type="button" value="1" class="-ms-px py-4 px-4 font-bold text-center md:text-start inline-flex justify-center items-center gap-x-2 border border-transparent bg-purple-600 text-purple-50 align-middle hover:bg-purple-700 focus:outline-none focus:bg-purple-700 disabled:opacity-50 disabled:pointer-events-none transition-all text-sm">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                                <button type="button" class="py-4 px-4 rounded-r-lg font-bold text-center md:text-start inline-flex justify-center items-center gap-x-2 border border-transparent bg-zinc-600 text-zinc-50 align-middle hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none transition-all text-sm">
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="button"
+                            class="text-center md:text-start text-sm py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-zinc-600 text-zinc-50 hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none">
+                            <i class="fa-solid fa-trash-can mr-2"></i>Usuń
+                        </button>
                     </div>
                 </div>
-                <div class="h-full p-4 border-2 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl cursor-pointer peer-checked:border-yellow-500 peer-checked:bg-zinc-900 hover:bg-zinc-900">
-                    <span class="font-semibold text-lg text-white">
-                        Wybrano format: <span id="selected-format">Brak</span>
-                    </span>
-                </div>
-
-                <script>
-                    document.getElementById('hs-dropdown-default').addEventListener('click', function() {
-                        const dropdownMenu = document.getElementById('hs-dropdown-menu');
-                        if (dropdownMenu.classList.contains('invisible')) {
-                            dropdownMenu.classList.remove('invisible', 'opacity-0');
-                            dropdownMenu.classList.add('visible', 'opacity-100');
-                        } else {
-                            dropdownMenu.classList.remove('visible', 'opacity-100');
-                            dropdownMenu.classList.add('invisible', 'opacity-0');
-                        }
-                    });
-
-                    // Zamknij dropdown po kliknięciu poza nim
-                    document.addEventListener('click', function(e) {
-                        const button = document.getElementById('hs-dropdown-default');
-                        const dropdownMenu = document.getElementById('hs-dropdown-menu');
-                        if (!button.contains(e.target) && !dropdownMenu.contains(e.target)) {
-                            dropdownMenu.classList.remove('visible', 'opacity-100');
-                            dropdownMenu.classList.add('invisible', 'opacity-0');
-                        }
-                    });
-
-                    // Obsługa wyboru opcji
-                    document.querySelectorAll('.format-option').forEach(option => {
-                        option.addEventListener('click', function(e) {
-                            e.preventDefault(); // Zapobiega przeładowaniu strony
-
-                            const selectedFormat = this.getAttribute('data-value');
-                            document.getElementById('selected-format').textContent = selectedFormat;
-
-                            // Zamykanie menu po wyborze
-                            const dropdownMenu = document.getElementById('hs-dropdown-menu');
-                            dropdownMenu.classList.remove('visible', 'opacity-100');
-                            dropdownMenu.classList.add('invisible', 'opacity-0');
-                        });
-                    });
-                </script>
-
-
 
             </div>
-            <span class="block my-2 text-sm font-medium text-white">Wykończenie</span>
-            <div class="grid grid-cols-2  gap-4 w-full my-2">
-                <div>
-                    <input name="ending2" type="radio" id="ending" value="flash" checked class="hidden peer">
-                    <label for="ending" class=" h-full p-4 border-2 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl cursor-pointer peer-checked:border-yellow-500 peer-checked:bg-zinc-900 hover:bg-zinc-900">
-                        <div>
-                            <span class="font-semibold text-lg text-white">
-                                Błysk
-                            </span>
-                        </div>
-                    </label>
-                </div>
-                <div>
-                    <input name="ending2" type="radio" id="ending2" value="mat" class="hidden peer">
-                    <label for="ending2" class=" h-full p-4 border-2 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl cursor-pointer peer-checked:border-yellow-500 peer-checked:bg-zinc-900 hover:bg-zinc-900">
-                        <div>
-                            <span class="font-semibold text-lg text-white">
-                                Mat
-                            </span>
-                        </div>
-                    </label>
-                </div>
-            </div>
-            <!--
-            <div class="my-2 bg-blue-900 text-sm text-white rounded-lg p-4" role="alert" tabindex="-1" aria-labelledby="hs-solid-color-info-label">
-                <span id="hs-solid-color-info-label" class="font-bold">Jak to działa?</span> Wszystko to co wyżej aktualnie uzupełnione zapisuje się przy przesłanym zdjęciu, a informacje wyżej można zmienić w czasie rzeczywistym. Jak pokaże się animacja na zdjęciu wtedy operacja przesyłania się kończy
-            </div>
-            -->
-            <div id="ban" class="my-3 grid-cols-5 gap-4 w-full border-2 border-red-700 border-dashed rounded-lg cursor-pointer bg-zinc-900">
-                <label for="dropzone-file">
-                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                        <i class="fa-solid fa-ban text-xl text-red-700"></i>
-                        <p class="mb-2 text-sm text-red-700 text-center"><span class="font-semibold">Uzupełnij Dane Kontaktowe</span> Abyś mógł przesłać zdjęcia</p>
-                    </div>
-                </label>
-            </div>
-
-            <form id="accept" enctype="multipart/form-data" method="POST" action="{{ route('form.store') }}" id="my-form" class="my-3 grid-cols-5 gap-4 dropzone w-full border-2 border-zinc-700 border-dashed rounded-lg cursor-pointer bg-zinc-900" style="display: none;">
+            <form id="accept" enctype="multipart/form-data" method="POST" action="{{ route('form.store') }}" id="my-form" class="my-3 grid-cols-5 gap-4 dropzone w-full border-2 border-zinc-700 border-dashed rounded-lg cursor-pointer bg-zinc-900">
                 @csrf
                 <input type="hidden" name="email" id="emailform" value=" ">
                 <input type="hidden" name="phone" id="phoneform" value=" ">
@@ -131,6 +182,16 @@
                     </div>
                 </label>
             </form>
+            <div class="rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-4 flex flex-row gap-4 items-center justify-center mb-4 w-full">
+                <button type="button"
+                    class="text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-green-600 text-green-50 hover:bg-green-700 focus:outline-none focus:bg-green-700 disabled:opacity-50 disabled:pointer-events-none">
+                    <i class="fa-solid fa-check mr-2"></i>Złóż zamówienie
+                </button>
+                <button type="button"
+                    class="text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-zinc-600 text-zinc-50 hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none">
+                    <i class="fa-solid fa-xmark mr-2"></i>Anuluj zamówienie
+                </button>
+            </div>
         </div>
     </div>
 </div>
@@ -139,35 +200,6 @@
 <script>
     $(document).ready(function() {
         let csrf = $('input[name="_token"]');
-
-        $('#phone').on('input', function() {
-            // Validate the form fields when user types
-            validateForm();
-        });
-
-        $('#email').on('input', function() {
-            // Validate the form fields when user types
-            validateForm();
-        });
-
-        function validateForm() {
-            const email = $('#email').val();
-            const phone = $('#phone').val();
-            const phonePattern = /^\d{9}$/; // Regular expression for 9 digits
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email pattern
-
-            if (emailPattern.test(email) && phonePattern.test(phone)) {
-                // If both email and phone are valid
-                $('#ban').hide();
-                $('#accept').show();
-                $('#emailform').val(email);
-                $('#phoneform').val(phone);
-            } else {
-                // If not valid, show the ban div
-                $('#ban').show();
-                $('#accept').hide();
-            }
-        }
 
         Dropzone.options.myAwesomeDropzone = {
             url: "{{ route('form.store') }}", // Poprawny URL do obsługi uploadu
@@ -190,4 +222,90 @@
     });
 </script>
 
+<div id="modalOverlay" class="fixed inset-0 bg-black opacity-50 hidden"></div>
+
+<div id="drawer" class="fixed bottom-0 left-0 z-50 w-full hidden">
+    <div class="grid h-full max-w-lg grid-cols-1 mx-auto py-3 w-full sm:w-fit px-4 sm:px-4 sm:px-8 sm:mt-5 h-fit bg-zinc-800 border-t border-zinc-700 rounded-t-lg">
+        <div class="flex flex-col gap-4  w-full">
+            <div class="flex flex-row justify-between gap-4 w-full">
+                <h1 class="font-bold md:leading-tight text-white text-xl my-2 text-center">
+
+                </h1>
+                <button type="button" class="close text-center inline-flex justify-center items-center gap-x-2 bg-transparent text-zinc-400 hover:text-red-700 transition-all text-sm">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="flex flex-row justify-between gap-4 w-full">
+                <h1 class="font-bold md:leading-tight text-white text-xl my-2 text-center">
+                    Zmień parametry następnych zdjęć
+                </h1>
+            </div>
+
+            <div class="w-full">
+                <label for="countries" class="block mt-2 mb-4 text-sm font-medium text-white">
+                    Rozmiar
+                </label>
+                <select id="countries" class="bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option selected>
+                        10x15 cm
+                    </option>
+                </select>
+            </div>
+            <div class="w-full">
+                <label for="countries" class="block mb-4 text-sm font-medium text-white">
+                    Wykończenie
+                </label>
+                <select id="countries" class="bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option selected>
+                        Błysk</option>
+                    <option value="">
+                        Mat
+                    </option>
+                </select>
+            </div>
+            <div>
+                <label for="hs-trailing-button-add-on-multiple-add-ons" class="block mb4 text-sm font-medium text-white">Odbitki</label>
+                <div class="flex rounded-lg bg-zinc-800 border border-zinc-700 ">
+                    <input type="text" id="hs-trailing-button-add-on-multiple-add-ons" name="hs-trailing-button-add-on-multiple-add-ons" class="text-white p-2.5 block w-full bg-zinc-800 text-sm focus:z-10 focus:ring-red-500 focus:border-red-500">
+                    <button type="button" value="1" class="-ms-px py-4 px-4 font-bold text-center md:text-start inline-flex justify-center items-center gap-x-2 border border-transparent bg-purple-600 text-purple-50 align-middle hover:bg-purple-700 focus:outline-none focus:bg-purple-700 disabled:opacity-50 disabled:pointer-events-none transition-all text-sm">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <button type="button" class="py-4 px-4 rounded-r-lg font-bold text-center md:text-start inline-flex justify-center items-center gap-x-2 border border-transparent bg-zinc-600 text-zinc-50 align-middle hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none transition-all text-sm">
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="w-full rounded-lg max-w-4xl mx-auto flex flex-row gap-4 items-center justify-center">
+                <button type="button"
+                    class="w-full h-full text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-green-600 text-green-50 hover:bg-green-700 focus:outline-none focus:bg-green-700 disabled:opacity-50 disabled:pointer-events-none">
+                    <i class="fa-solid fa-check mr-2"></i>Zapisz zmiany
+                </button>
+                <button type="button"
+                    class="close w-full h-full text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-zinc-600 text-zinc-50 hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none">
+                    <i class="fa-solid fa-xmark mr-2"></i>Anuluj
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        // Pokazuje modal i przyciemnia resztę strony
+        $('.params').on('click', function() {
+            $('#modalOverlay').removeClass('hidden'); // Pokazuje tło
+            $('#drawer').removeClass('hidden'); // Pokazuje modal
+        });
+
+        // Zamyka modal na kliknięcie "Anuluj" lub "X"
+        $('.close').on('click', function() {
+            $('#modalOverlay').addClass('hidden'); // Ukrywa tło
+            $('#drawer').addClass('hidden'); // Ukrywa modal
+        });
+
+        // Zapisz zmiany nie robi nic w tej chwili
+        $('#save').on('click', function() {
+            // Obecnie brak akcji
+        });
+    });
+</script>
 @endsection
