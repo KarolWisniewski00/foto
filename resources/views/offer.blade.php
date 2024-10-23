@@ -33,13 +33,13 @@
                 <div class="row-start-2 md:row-start-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
+                            Paszportowe, dowodowe, legitymacyjne, dyplomowe
+                        </span>
+                        <p class="text-xs text-zinc-400">
                             Do dokumentów
                             <span class="text-red-500">
                                 w 5 minut sam możesz wybrać najlepsze ujęcie
                             </span>
-                        </span>
-                        <p class="text-xs text-zinc-400">
-                            Paszportowe, dowodowe, legtymacyjne, dyplomowe
                         </p>
                     </div>
                 </div>
@@ -98,7 +98,7 @@
         <div class="flex flex-col justify-center py-3 w-full gap-5">
             <h1 class="font-bold md:leading-tight text-white text-3xl text-center my-2">OFERTA ŚLUBNO-WESELNA</h1>
             <h1 class="font-bold md:leading-tight text-white text-xl my-2">PAKIET MINI</h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-4 md:grid-rows-2 gap-5 w-full mt-5 md:px-0 mb-5">
+            <div class="grid grid-cols-1 gap-5 w-full mt-5 md:px-0 mb-5">
                 <div class=" h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
@@ -108,31 +108,26 @@
                             w dniu ślubu lub w innym dogodnym terminie
                         </p>
                     </div>
-                </div>
-                <div class="row-start-4 md:row-start-1 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
                             Foto-Książka
                         </span>
+                        <p class="text-xs text-zinc-400">
+                        wg. indywidualnego projektu
+                        </p>
                     </div>
-                </div>
-                <div class="row-start-3 md:row-start-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
-                    <div>
-                        <span class="font-semibold text-lg text-white">
-                            wg. indywidualnego projektu
-                        </span>
-                    </div>
-                </div>
-                <div class="row-start-2 md:row-start-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
+            
                     <div>
                         <span class="font-semibold text-lg text-white">
                             Portret na płótnie
                         </span>
                     </div>
                 </div>
+                
+                
             </div>
             <h1 class="font-bold md:leading-tight text-white text-xl my-2">PAKIET STANDARD</h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-8 md:grid-rows-2 gap-5 w-full mt-5 md:px-0 mb-5">
+            <div class="grid grid-cols-1 gap-5 w-full mt-5 md:px-0 mb-5">
                 <div class=" h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
@@ -142,50 +137,34 @@
                             w dniu ślubu lub w innym dogodnym terminie
                         </p>
                     </div>
-                </div>
-                <div class="row-start-4 md:row-start-1 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
                             Foto-Książka
                         </span>
+                        <p class="text-xs text-zinc-400">
+                        wg. indywidualnego projektu
+                        </p>
                     </div>
-                </div>
-                <div class="row-start-3 md:row-start-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
-                    <div>
-                        <span class="font-semibold text-lg text-white">
-                            wg. indywidualnego projektu
-                        </span>
-                    </div>
-                </div>
-                <div class="row-start-2 md:row-start-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
                             Portret na płótnie
                         </span>
                     </div>
-                </div>
-                <div class="row-start-5 md:row-start-3 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
                             Płyta CD/DVD z Waszymi zdjęciami
                         </span>
                     </div>
-                </div>
-                <div class="row-start-6 md:row-start-3 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
                             Przygotowania w domu i Błogosławieństwo
                         </span>
                     </div>
-                </div>
-                <div class="row-start-7 md:row-start-4 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
                             Reportaż z ceremoni Ślubnej
                         </span>
                     </div>
-                </div>
-                <div class="row-start-8 md:row-start-4 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
                             Reportaż z przyjęcia weselnego
@@ -195,10 +174,11 @@
                         </p>
                     </div>
                 </div>
+                
             </div>
 
             <h1 class="font-bold md:leading-tight text-white text-xl my-2">PAKIET STANDARD PLUS</h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-9 md:grid-rows-2 gap-5 w-full mt-5 md:px-0 mb-5">
+            <div class="grid grid-cols-1 gap-5 w-full mt-5 md:px-0 mb-5">
                 <div class=" h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
@@ -208,72 +188,47 @@
                             w dniu ślubu lub w innym dogodnym terminie
                         </p>
                     </div>
-                </div>
-                <div class="row-start-4 md:row-start-1 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
                             Foto-Książka
                         </span>
+                        <p class="text-xs text-zinc-400">
+                        wg. indywidualnego projektu
+                        </p>
                     </div>
-                </div>
-                <div class="row-start-3 md:row-start-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
-                    <div>
-                        <span class="font-semibold text-lg text-white">
-                            wg. indywidualnego projektu
-                        </span>
-                    </div>
-                </div>
-                <div class="row-start-2 md:row-start-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
                             Portret na płótnie
                         </span>
                     </div>
-                </div>
-                <div class="row-start-5 md:row-start-3 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
                             Płyta CD/DVD z Waszymi zdjęciami
                         </span>
                     </div>
-                </div>
-                <div class="row-start-6 md:row-start-3 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
                             Przygotowania w domu i Błogosławieństwo
                         </span>
                     </div>
-                </div>
-                <div class="row-start-7 md:row-start-4 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
                             Reportaż z ceremoni Ślubnej
                         </span>
                     </div>
-                </div>
-                <div class="row-start-8 md:row-start-4 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
                             Reportaż z przyjęcia weselnego
                         </span>
                         <p class="text-xs text-zinc-400">
-                            do pierwszego tańca lub do tortu
+                            do oczepin
                         </p>
                     </div>
                 </div>
-                <div class="row-start-9 md:row-start-5 md:col-span-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
-                    <div>
-                        <span class="font-semibold text-lg text-white">
-                            Reportaż z przyjęcia weselnego
-                        </span>
-                        <p class="text-xs text-zinc-400">
-                            do pierwszego tańca lub do tortu
-                        </p>
-                    </div>
-                </div>
+                
             </div>
             <h1 class="font-bold md:leading-tight text-white text-xl my-2">PAKIET STANDARD 2000</h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-9 md:grid-rows-2 gap-5 w-full mt-5 md:px-0 mb-5">
+            <div class="grid grid-cols-1 gap-5 w-full mt-5 md:px-0 mb-5">
                 <div class=" h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
@@ -283,50 +238,34 @@
                             w dniu ślubu lub w innym dogodnym terminie
                         </p>
                     </div>
-                </div>
-                <div class="row-start-4 md:row-start-1 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
                             Foto-Książka
                         </span>
+                        <p class="text-xs text-zinc-400">
+                        wg. indywidualnego projektu
+                        </p>
                     </div>
-                </div>
-                <div class="row-start-3 md:row-start-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
-                    <div>
-                        <span class="font-semibold text-lg text-white">
-                            wg. indywidualnego projektu
-                        </span>
-                    </div>
-                </div>
-                <div class="row-start-2 md:row-start-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
                             Portret na płótnie
                         </span>
                     </div>
-                </div>
-                <div class="row-start-5 md:row-start-3 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
                             Płyta CD/DVD z Waszymi zdjęciami
                         </span>
                     </div>
-                </div>
-                <div class="row-start-6 md:row-start-3 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
                             Przygotowania w domu i Błogosławieństwo
                         </span>
                     </div>
-                </div>
-                <div class="row-start-7 md:row-start-4 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
                             Reportaż z ceremoni Ślubnej
                         </span>
                     </div>
-                </div>
-                <div class="row-start-8 md:row-start-4 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
                             Reportaż z przyjęcia weselnego
@@ -336,16 +275,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="row-start-9 md:row-start-5 md:col-span-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
-                    <div>
-                        <span class="font-semibold text-lg text-white">
-                            Reportaż z przyjęcia weselnego
-                        </span>
-                        <p class="text-xs text-zinc-400">
-                            do pierwszego tańca lub do tortu
-                        </p>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
