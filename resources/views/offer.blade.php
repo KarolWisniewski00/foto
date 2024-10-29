@@ -33,13 +33,10 @@
                 <div class="row-start-2 md:row-start-2 h-full p-4 flex flex-col justify-between bg-zinc-800 border border-zinc-700 rounded-xl">
                     <div>
                         <span class="font-semibold text-lg text-white">
-                            Paszportowe, dowodowe, legitymacyjne, dyplomowe
+                        Do dokumentów
                         </span>
-                        <p class="text-xs text-zinc-400">
-                            Do dokumentów
-                            <span class="text-red-500">
-                                w 5 minut sam możesz wybrać najlepsze ujęcie
-                            </span>
+                        <p class="text-xs text-red-500">
+                            Zdjęcia z retuszem - gotowe na poczekaniu
                         </p>
                     </div>
                 </div>

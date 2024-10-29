@@ -13,7 +13,8 @@ class FormController extends Controller
     }
 
     public function store(Request $request)
-    {
+    {   
+        return 200;
         $email = $request->input('email');
         $phone = $request->input('phone');
         $format = $request->input('format');
