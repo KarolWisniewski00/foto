@@ -14,7 +14,7 @@ class FormController extends Controller
 
     public function store(Request $request)
     {   
-        return 200;
+        return response()->json(['success' => 'Zdjęcie zostało pomyślnie przesłane.']);
         $email = $request->input('email');
         $phone = $request->input('phone');
         $format = $request->input('format');

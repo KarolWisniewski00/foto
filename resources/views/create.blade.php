@@ -94,9 +94,47 @@
                     <i class="fa-solid fa-layer-group mr-2"></i>Edytuj wszystkie
                 </button>
             </div>
-            <div class="del grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="p-4 w-full h-full bg-zinc-800 rounded-lg border border-zinc-700 hover:bg-zinc-900">
-                    <img class="" alt="" src="{{asset('photo/main.jpg')}}">
+            <div id="photos" class="del grid grid-cols-1 md:grid-cols-3 gap-4">
+                
+
+            </div>
+            <form id="myid" enctype="multipart/form-data" method="POST" action="{{ route('form.store') }}" class="my-3 grid-cols-5 gap-4 dropzone w-full border-2 border-zinc-700 border-dashed rounded-lg cursor-pointer bg-zinc-900">
+                @csrf
+                <input type="hidden" name="email" id="emailform" value=" ">
+                <input type="hidden" name="phone" id="phoneform" value=" ">
+                <input type="hidden" name="format" value="wkrótce">
+                <input type="hidden" name="ending" value="wkrótce">
+                <label for="dropzone-file">
+                    <div data-dz-message class="dz-message flex flex-col items-center justify-center pt-5 pb-6">
+                        <svg class="w-8 h-8 mb-4 text-zinc-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                        </svg>
+                        <p class="mb-2 text-sm text-zinc-400"><span class="font-semibold">Kliknij aby przesłać</span> lub przeciągnij i upuść</p>
+                        <p class="text-xs text-zinc-500">PNG, JPG</p>
+                    </div>
+                </label>
+            </form>
+            <div class="del rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-4 flex flex-row gap-4 items-center justify-center mb-4 w-full">
+                <button type="button"
+                    class="text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-green-600 text-green-50 hover:bg-green-700 focus:outline-none focus:bg-green-700 disabled:opacity-50 disabled:pointer-events-none">
+                    <i class="fa-solid fa-check mr-2"></i>Złóż zamówienie
+                </button>
+                <button type="button"
+                    class="text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-zinc-600 text-zinc-50 hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none">
+                    <i class="fa-solid fa-xmark mr-2"></i>Anuluj zamówienie
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    Dropzone.autoDiscover = false;
+    function getCard(path)  {
+     return `
+     <div class="p-4 w-full h-full bg-zinc-800 rounded-lg border border-zinc-700 hover:bg-zinc-900">
+                    <img class="" alt="" src="${path}">
                     <div class="flex flex-col gap-4">
                         <div class="w-full">
                             <label for="countries" class="block mt-2 mb-4 text-sm font-medium text-white">Rozmiar</label>
@@ -129,66 +167,44 @@
                         </button>
                     </div>
                 </div>
-
-            </div>
-            <form id="accept" enctype="multipart/form-data" method="POST" action="{{ route('form.store') }}" id="my-form" class="my-3 grid-cols-5 gap-4 dropzone w-full border-2 border-zinc-700 border-dashed rounded-lg cursor-pointer bg-zinc-900">
-                @csrf
-                <input type="hidden" name="email" id="emailform" value=" ">
-                <input type="hidden" name="phone" id="phoneform" value=" ">
-                <input type="hidden" name="format" value="wkrótce">
-                <input type="hidden" name="ending" value="wkrótce">
-                <label for="dropzone-file">
-                    <div data-dz-message class="dz-message flex flex-col items-center justify-center pt-5 pb-6">
-                        <svg class="w-8 h-8 mb-4 text-zinc-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
-                        </svg>
-                        <p class="mb-2 text-sm text-zinc-400"><span class="font-semibold">Kliknij aby przesłać</span> lub przeciągnij i upuść</p>
-                        <p class="text-xs text-zinc-500">PNG, JPG</p>
-                    </div>
-                </label>
-            </form>
-            <div class="del rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-4 flex flex-row gap-4 items-center justify-center mb-4 w-full">
-                <button type="button"
-                    class="text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-green-600 text-green-50 hover:bg-green-700 focus:outline-none focus:bg-green-700 disabled:opacity-50 disabled:pointer-events-none">
-                    <i class="fa-solid fa-check mr-2"></i>Złóż zamówienie
-                </button>
-                <button type="button"
-                    class="text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-zinc-600 text-zinc-50 hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none">
-                    <i class="fa-solid fa-xmark mr-2"></i>Anuluj zamówienie
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
+     `
+    }
     $(document).ready(function() {
-        let csrf = $('input[name="_token"]');
+    let csrf = $('input[name="_token"]');
+        
 
-        Dropzone.options.myAwesomeDropzone = {
-            url: "{{ route('form.store') }}", // Poprawny URL do obsługi uploadu
+
+    uploader = new Dropzone(".dropzone",{
+        url: "{{ route('form.store') }}", // Poprawny URL do obsługi uploadu
             maxFiles: 1000, // Maksymalna liczba plików
             maxFilesize: 50, // Maksymalny rozmiar pliku (MB)
             acceptedFiles: 'image/*', // Akceptowane typy plików
             dictDefaultMessage: "Przeciągnij i upuść zdjęcia tutaj lub kliknij, aby wybrać",
-            method: "POST"
             headers: {
                 '_token': csrf.val(),
             }, // Wsparcie dla tokenu CSRF w Laravel
             init: function() {
                 this.on("success", function(file, response) {
-                    
-            
+                    console.log("test:", response);
+                    //pokazuje elementy
+                    document.querySelectorAll('.del').forEach(element => {
+                        element.classList.remove('hidden');
+                    });  
+                    //pokazywanie pełnego podglądu zdjęć
+                $('#photos').append(getCard());
                 });
                 this.on("error", function(file, response) {
                     console.log("Wystąpił błąd podczas przesyłania pliku:", response);
                     document.querySelectorAll('.del').forEach(element => {
-                    element.classList.remove('hidden');
-            });
+                        element.classList.remove('hidden');
+                    });
                 });
             }
-        };
+        });//end drop zone
+
+        uploader.on("success", function(file,response) {
+            console.log(response)
+        });
     });
 </script>
 
@@ -258,16 +274,11 @@
         </div>
     </div>
 </div>
+
 <script>
     $(document).ready(function() {
-
-
-
-       
         $('.del').addClass('hidden');
         
-
-
         // Pokazuje modal i przyciemnia resztę strony
         $('.params').on('click', function() {
             $('#modalOverlay').removeClass('hidden'); // Pokazuje tło
