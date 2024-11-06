@@ -14,11 +14,11 @@ class FormController extends Controller
 
     public function store(Request $request)
     {   
-        return response()->json(['success' => 'Zdjęcie zostało pomyślnie przesłane.']);
-        $email = $request->input('email');
-        $phone = $request->input('phone');
-        $format = $request->input('format');
-        $ending = $request->input('ending');
+        //return response()->json(['success' => 'Zdjęcie zostało pomyślnie przesłane.']);
+        //$email = $request->input('email');
+        //$phone = $request->input('phone');
+        //$format = $request->input('format');
+        //$ending = $request->input('ending');
         //Przenoszenie pliku z formularza do public/photo
         $file = $request->file('file');
         $fileName = time() . rand(1, 100) . '.' . $file->extension();
@@ -26,15 +26,18 @@ class FormController extends Controller
 
         $photo = new Photo();
         $photo->file_name = $fileName;
-        $photo->email = $email;
-        $photo->phone = $phone;
-        $photo->format = $format;
-        $photo->ending = $ending;
+        $photo->email = '$email';
+        $photo->phone = '$phone';
+        $photo->format = '$format';
+        $photo->ending = '$ending';
 
         $photo->save();
 
         if ($res) {
-            return response()->json(['success' => 'Zdjęcie zostało pomyślnie przesłane.']);
+            return response()->json([
+                'success' => 'Zdjęcie zostało pomyślnie przesłane.',
+                'file_name' => $fileName
+            ]);
         } else {
             return response()->json(['fail' => 'Zdjęcie nie zostało zapisane.']);
         }

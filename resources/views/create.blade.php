@@ -32,7 +32,7 @@
                                 RAZEM
                             </span>
                             <p class="text-xs text-zinc-400">
-                                Odbitki 5 szt
+                                Odbitki <span id="resume-count"></span> szt
                             </p>
                         </div>
                         <div class="w-1/2 flex flex-col items-end">
@@ -130,11 +130,12 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    Dropzone.autoDiscover = false;
+    Dropzone.autoDiscover = false; 
+    // Zwraca widok zdjęcia z ustawieniami 
     function getCard(path)  {
      return `
      <div class="p-4 w-full h-full bg-zinc-800 rounded-lg border border-zinc-700 hover:bg-zinc-900">
-                    <img class="" alt="" src="${path}">
+                    <img class="" alt="" src="photo/${path}">
                     <div class="flex flex-col gap-4">
                         <div class="w-full">
                             <label for="countries" class="block mt-2 mb-4 text-sm font-medium text-white">Rozmiar</label>
@@ -152,7 +153,7 @@
                         <div>
                             <label for="hs-trailing-button-add-on-multiple-add-ons" class="block mb4 text-sm font-medium text-white">Odbitki</label>
                             <div class="flex rounded-lg bg-zinc-800 border border-zinc-700 ">
-                                <input type="text" id="hs-trailing-button-add-on-multiple-add-ons" name="hs-trailing-button-add-on-multiple-add-ons" class="text-white p-2.5 block w-full bg-zinc-800 text-sm focus:z-10 focus:ring-red-500 focus:border-red-500">
+                                <input type="text" value="1" id="hs-trailing-button-add-on-multiple-add-ons" name="hs-trailing-button-add-on-multiple-add-ons" class="text-white p-2.5 block w-full bg-zinc-800 text-sm focus:z-10 focus:ring-red-500 focus:border-red-500">
                                 <button type="button" value="1" class="-ms-px py-4 px-4 font-bold text-center md:text-start inline-flex justify-center items-center gap-x-2 border border-transparent bg-purple-600 text-purple-50 align-middle hover:bg-purple-700 focus:outline-none focus:bg-purple-700 disabled:opacity-50 disabled:pointer-events-none transition-all text-sm">
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
@@ -171,7 +172,7 @@
     }
     $(document).ready(function() {
     let csrf = $('input[name="_token"]');
-        
+    var resumeCounter = 0;
 
 
     uploader = new Dropzone(".dropzone",{
@@ -185,13 +186,16 @@
             }, // Wsparcie dla tokenu CSRF w Laravel
             init: function() {
                 this.on("success", function(file, response) {
-                    console.log("test:", response);
+                    console.log("response:", response['file_name']);
                     //pokazuje elementy
                     document.querySelectorAll('.del').forEach(element => {
                         element.classList.remove('hidden');
                     });  
                     //pokazywanie pełnego podglądu zdjęć
-                $('#photos').append(getCard());
+                    $('#photos').append(getCard(response['file_name']));
+                    //licznik 
+                    resumeCounter += 1;
+                    $('#resume-count').html(resumeCounter);
                 });
                 this.on("error", function(file, response) {
                     console.log("Wystąpił błąd podczas przesyłania pliku:", response);
