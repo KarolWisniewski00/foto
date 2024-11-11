@@ -7,37 +7,23 @@
         <div class="flex flex-col justify-center py-3 w-full">
             <h1 class="del font-bold md:leading-tight text-zinc-200 text-3xl text-center my-2">PODSUMOWANIE ZAMÓWIENIA</h1>
             <h1 class="del font-bold md:leading-tight text-white text-xl my-2 text-center">Wybierz kolejne zdjęcia, zmień rozmiar lub ilość odbitek.</h1>
-            <div class="del grid grid-cols-1 gap-4 w-full my-2">
-                <div>
-                    <button type="button" class="hover:cursor-default w-full h-full p-4 flex flex-row justify-between bg-zinc-800 border border-zinc-700 rounded-xl cursor-pointer peer-checked:border-yellow-500 peer-checked:bg-zinc-900 hover:bg-zinc-900">
-                        <div class="w-1/2 flex flex-col items-start">
-                            <span class="font-semibold text-lg text-white">
-                                Nazwa
-                            </span>
-                            <p class="text-xs text-zinc-400">
-                                1,20 zł/odbitka
-                            </p>
-                        </div>
-                        <div class="w-1/2 flex flex-col items-end">
-                            <span class="font-semibold text-lg text-white">
-                                1,20 zł
-                            </span>
-                        </div>
-                    </button>
+            <div class="del grid grid-cols-1 w-full my-2">
+                <div id="resume-container">
+
                 </div>
                 <div>
                     <button type="button" class="hover:cursor-default w-full h-full p-4 flex flex-row justify-between bg-zinc-800 border border-zinc-700 rounded-xl cursor-pointer peer-checked:border-yellow-500 peer-checked:bg-zinc-900 hover:bg-zinc-900">
                         <div class="w-1/2 flex flex-col items-start">
                             <span class="font-semibold text-lg text-white">
-                                RAZEM
+                                RAZEM <span id="resume-count"></span> szt
                             </span>
                             <p class="text-xs text-zinc-400">
-                                Odbitki <span id="resume-count"></span> szt
+                                Odbitki
                             </p>
                         </div>
                         <div class="w-1/2 flex flex-col items-end">
                             <span class="font-semibold text-lg text-white">
-                                6,00 zł
+                                <span id="resume-price"></span> zł
                             </span>
                         </div>
                     </button>
@@ -62,48 +48,50 @@
                 </div>
 
             </div>
-            <div class="del">
-                <label for="email" class="block my-2 text-sm font-medium text-white">Email</label>
-                <input type="email" id="email" class="my-2 bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" required />
-            </div>
-            <div class="del">
-                <label for="phone" class="block my-2 text-sm font-medium text-white">Numer telefonu</label>
-                <input type="text" id="phone" class=" my-2 bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" required />
-            </div>
-            <div class="del">
-                <label for="phone" class="block my-2 text-sm font-medium text-white">Imię i nazwisko</label>
-                <input type="text" id="phone" class=" my-2 bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" required />
-            </div>
-            <div class="del rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-4 flex flex-row gap-4 items-center justify-center mb-4 w-full">
-                <button type="button"
-                    class="text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-green-600 text-green-50 hover:bg-green-700 focus:outline-none focus:bg-green-700 disabled:opacity-50 disabled:pointer-events-none">
-                    <i class="fa-solid fa-check mr-2"></i>Złóż zamówienie
-                </button>
-                <button type="button"
-                    class="text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-zinc-600 text-zinc-50 hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none">
-                    <i class="fa-solid fa-xmark mr-2"></i>Anuluj zamówienie
-                </button>
-            </div>
+            <form action="{{ route('form.store_form') }}" method="post" class="del flex flex-col justify-center w-full">
+                @csrf
+                <div class="del">
+                    <label for="email" class="block my-2 text-sm font-medium text-white">Email</label>
+                    <input type="email" id="email" name="email" class="my-2 bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" required />
+                </div>
+                <div class="del">
+                    <label for="phone" class="block my-2 text-sm font-medium text-white">Numer telefonu</label>
+                    <input type="text" id="phone" name="phone" class=" my-2 bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" required />
+                </div>
+                <div class="del">
+                    <label for="name" class="block my-2 text-sm font-medium text-white">Imię i nazwisko</label>
+                    <input type="text" id="name" name="name" class=" my-2 bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" required />
+                </div>
+
+                <input type="hidden" name="photos" id="photos-send" value="">
+                <input type="hidden" name="rows" id="rows" value="">
+                <input type="hidden" name="total_price" id="total-price" value="">
+                <input type="hidden" name="total_count" id="total-count" value="">
+                <div class="del rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-4 flex flex-row gap-4 items-center justify-center mb-4 w-full">
+                    <button type="submit" id="submit"
+                        class="text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-green-600 text-green-50 hover:bg-green-700 focus:outline-none focus:bg-green-700 disabled:opacity-50 disabled:pointer-events-none">
+                        <i class="fa-solid fa-check mr-2"></i>Złóż zamówienie
+                    </button>
+                    <a href="{{route('form.create')}}"
+                        class="text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-zinc-600 text-zinc-50 hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none">
+                        <i class="fa-solid fa-xmark mr-2"></i>Anuluj zamówienie
+                    </a>
+                </div>
+            </form>
             <div class="del rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-4 flex flex-row gap-4 items-center justify-center mb-4 w-full">
                 <button type="button" id="openDrawerBtn"
                     class="params text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-purple-600 text-purple-50 hover:bg-purple-700 focus:outline-none focus:bg-purple-700 disabled:opacity-50 disabled:pointer-events-none">
-                    <i class="fa-solid fa-forward mr-2"></i>Zmień parametry następnych zdjęć
-                </button>
-                <button type="button"
-                    class="params text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-zinc-600 text-zinc-50 hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none">
                     <i class="fa-solid fa-layer-group mr-2"></i>Edytuj wszystkie
                 </button>
             </div>
+            <h1 class="del font-bold md:leading-tight text-white text-xl my-2 text-center">Przesłane zdjęcia</h1>
             <div id="photos" class="del grid grid-cols-1 md:grid-cols-3 gap-4">
-                
+
 
             </div>
+            <h1 class="font-bold md:leading-tight text-white text-xl my-2 text-center">Miejsce do przesyłania zdjęć</h1>
             <form id="myid" enctype="multipart/form-data" method="POST" action="{{ route('form.store') }}" class="my-3 grid-cols-5 gap-4 dropzone w-full border-2 border-zinc-700 border-dashed rounded-lg cursor-pointer bg-zinc-900">
                 @csrf
-                <input type="hidden" name="email" id="emailform" value=" ">
-                <input type="hidden" name="phone" id="phoneform" value=" ">
-                <input type="hidden" name="format" value="wkrótce">
-                <input type="hidden" name="ending" value="wkrótce">
                 <label for="dropzone-file">
                     <div data-dz-message class="dz-message flex flex-col items-center justify-center pt-5 pb-6">
                         <svg class="w-8 h-8 mb-4 text-zinc-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
@@ -119,95 +107,309 @@
                     class="text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-green-600 text-green-50 hover:bg-green-700 focus:outline-none focus:bg-green-700 disabled:opacity-50 disabled:pointer-events-none">
                     <i class="fa-solid fa-check mr-2"></i>Złóż zamówienie
                 </button>
-                <button type="button"
+                <a href="{{route('form.create')}}"
                     class="text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-zinc-600 text-zinc-50 hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none">
                     <i class="fa-solid fa-xmark mr-2"></i>Anuluj zamówienie
-                </button>
+                </a>
             </div>
         </div>
     </div>
 </div>
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    Dropzone.autoDiscover = false; 
-    // Zwraca widok zdjęcia z ustawieniami 
-    function getCard(path)  {
-     return `
-     <div class="p-4 w-full h-full bg-zinc-800 rounded-lg border border-zinc-700 hover:bg-zinc-900">
-                    <img class="" alt="" src="photo/${path}">
-                    <div class="flex flex-col gap-4">
-                        <div class="w-full">
-                            <label for="countries" class="block mt-2 mb-4 text-sm font-medium text-white">Rozmiar</label>
-                            <select id="countries" class="bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option selected>10x15 cm</option>
-                            </select>
-                        </div>
-                        <div class="w-full">
-                            <label for="countries" class="block mb-4 text-sm font-medium text-white">Wykończenie</label>
-                            <select id="countries" class="bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option selected>Błysk</option>
-                                <option value="">Mat</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="hs-trailing-button-add-on-multiple-add-ons" class="block mb4 text-sm font-medium text-white">Odbitki</label>
-                            <div class="flex rounded-lg bg-zinc-800 border border-zinc-700 ">
-                                <input type="text" value="1" id="hs-trailing-button-add-on-multiple-add-ons" name="hs-trailing-button-add-on-multiple-add-ons" class="text-white p-2.5 block w-full bg-zinc-800 text-sm focus:z-10 focus:ring-red-500 focus:border-red-500">
-                                <button type="button" value="1" class="-ms-px py-4 px-4 font-bold text-center md:text-start inline-flex justify-center items-center gap-x-2 border border-transparent bg-purple-600 text-purple-50 align-middle hover:bg-purple-700 focus:outline-none focus:bg-purple-700 disabled:opacity-50 disabled:pointer-events-none transition-all text-sm">
-                                    <i class="fa-solid fa-plus"></i>
-                                </button>
-                                <button type="button" class="py-4 px-4 rounded-r-lg font-bold text-center md:text-start inline-flex justify-center items-center gap-x-2 border border-transparent bg-zinc-600 text-zinc-50 align-middle hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none transition-all text-sm">
-                                    <i class="fa-solid fa-minus"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <button type="button"
-                            class="text-center md:text-start text-sm py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-zinc-600 text-zinc-50 hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none">
-                            <i class="fa-solid fa-trash-can mr-2"></i>Usuń
-                        </button>
+    class Photo {
+        constructor(id, src, form) {
+            const self = this;
+            self.src = src;
+            self.id = id;
+            self.form = form;
+            self.size = '10x15';
+            self.ending = null;
+            self.count = 1;
+        }
+        // Zwraca widok zdjęcia z ustawieniami 
+        getCard() {
+            const self = this;
+            return `
+            <div id="${self.id}" class="p-4 w-full h-full bg-zinc-800 rounded-lg border border-zinc-700 hover:bg-zinc-900">
+                <img id="" class-"w-full h-auto rounded-lg" alt="" src="data:image/jpeg;base64,${self.src}">
+                <div class="flex flex-col justify-between gap-4">
+                    <div class="w-full">
+                        <label for="${self.id}-size" class="block mt-2 mb-4 text-sm font-medium text-white">Rozmiar</label>
+                        <select id="${self.id}-size" class="bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="${self.size}" selected>${self.size} cm</option>
+                            <option value="13x18">13x18 cm</option>
+                        </select>
                     </div>
+                    <div class="w-full">
+                        <label for="countries" class="block mb-4 text-sm font-medium text-white">Wykończenie</label>
+                        <select id="countries" class="bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option selected>Błysk</option>
+                            <option value="">Mat</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="count" class="block mb4 text-sm font-medium text-white">Odbitki</label>
+                        <div class="flex rounded-lg bg-zinc-800 border border-zinc-700 ">
+                            <input type="number" step="1" min="1" value="${self.count}" id="${self.id}-count" name="count" class="text-white p-2.5 block w-full bg-zinc-800 text-sm focus:z-10 focus:ring-red-500 focus:border-red-500">
+                            <button id="${self.id}-plus" type="button" class="-ms-px py-4 px-4 font-bold text-center md:text-start inline-flex justify-center items-center gap-x-2 border border-transparent bg-purple-600 text-purple-50 align-middle hover:bg-purple-700 focus:outline-none focus:bg-purple-700 disabled:opacity-50 disabled:pointer-events-none transition-all text-sm">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                            <button id="${self.id}-minus" type="button" class="py-4 px-4 rounded-r-lg font-bold text-center md:text-start inline-flex justify-center items-center gap-x-2 border border-transparent bg-zinc-600 text-zinc-50 align-middle hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none transition-all text-sm">
+                                <i class="fa-solid fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <button type="button" id="${self.id}-del"
+                        class="text-center md:text-start text-sm py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-zinc-600 text-zinc-50 hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none">
+                        <i class="fa-solid fa-trash-can mr-2"></i>Usuń
+                    </button>
                 </div>
-     `
+            </div>
+            `
+        }
+    }
+
+    Dropzone.autoDiscover = false;
+    class Form {
+        constructor() {
+            const self = this;
+            self.counter = 0;
+            self.photos = [];
+            self.types = [];
+            self.priceList = {
+                '10x15': [{
+                        start: 0,
+                        end: 50,
+                        price: 0.80
+                    },
+                    {
+                        start: 51,
+                        end: 100,
+                        price: 0.75
+                    },
+                    {
+                        start: 101,
+                        end: 150,
+                        price: 0.70
+                    },
+                ],
+                '13x18': [{
+                        start: 0,
+                        end: 20,
+                        price: 1.20
+                    },
+                    {
+                        start: 21,
+                        end: 50,
+                        price: 1.10
+                    },
+                    {
+                        start: 51,
+                        end: 100,
+                        price: 0.90
+                    },
+                ],
+            };
+        }
+        //Pokazuje elementy formularza
+        showAll() {
+            $('.del').removeClass('hidden');
+            //window.addEventListener('beforeunload', (event) => {
+            //    // Wyświetla komunikat ostrzegawczy
+            //    event.preventDefault(); // Standardowe zabezpieczenie
+            //    event.returnValue = ''; // Wymagane dla zgodności z większością przeglądarek
+            //});
+
+        }
+        addToArrayIfNotExist(val, arr) {
+            const doesAlreadyExist = arr.includes(val);
+            if (doesAlreadyExist) return arr;
+            arr.push(val);
+            $('#resume-container').append(`
+                <div id="${val}" class="mb-4">
+                </div>
+            `);
+            return arr;
+        }
+        //Aktualizauje elementy formularza
+        updateParams() {
+            const self = this;
+            var count = 0;
+            var prices = 0;
+            var rows = [];
+            var photos = [];
+            var listphotosSend = [];
+            var rows = [];
+
+            //Przejdź przez wszystkie zdjęcia podlicz je i wypisz formaty
+            self.photos.forEach(photo => {
+                count += parseInt(photo.count);
+                self.types = self.addToArrayIfNotExist(photo.size, self.types)
+            });
+
+            //Dla każdego formatu pokaż rekord z dynamicznie zmieniamymi cenami
+            self.types.forEach(type => {
+                var counter = 0;
+                var price = 0;
+                var psc = null;
+
+                //podlicz ten typ
+                self.photos.forEach(photo => {
+                    if (photo.size === type) {
+                        counter += parseInt(photo.count);
+                    }
+                });
+                console.log(type);
+                //wylicz cene dla tego typu
+                self.priceList[type].forEach(element => {
+                    if (counter >= element.start && counter <= element.end) {
+                        price += counter * element.price;
+                        psc = element.price;
+                    }
+                });
+
+                //dodaj rekord do podsumowania
+                $('#' + type).html(self.getRecordResume(type, psc, price.toFixed(2)));
+                prices += price;
+                rows.push({
+                    type: type,
+                    psc: psc,
+                    price: price.toFixed(2),
+                });
+            });
+            self.photos.forEach(photo => {
+                listphotosSend.push({
+                    count: photo.count,
+                    src: photo.src,
+                    format: photo.size,
+                });
+            });
+            $('#photos-send').val(JSON.stringify(listphotosSend));
+            $('#rows').val(JSON.stringify(rows));
+
+            //pokaż sumę wszytkich odbitek
+            $('#resume-count').html(count);
+            $('#total-count').val(count);
+
+            //pokaż sumę ceny
+            $('#resume-price').html(prices.toFixed(2));
+            $('#total-price').val(prices.toFixed(2));
+        }
+        //Dodaje zdjecia do formularza
+        addPhoto(id, src) {
+            const self = this;
+            const photo = new Photo(id, src, self); //Stwórz obiekt
+            $('#photos').append(photo.getCard()); //Dodaj do html'a
+            self.photos.push(photo); //Dodaj do obiektu formularz do zmiennej typu lista (siebie)
+
+            //Aktywacja przycisku "Usuwanie"
+            $(document).on('click', '#' + id + '-del', function() {
+                self.removePhoto(id);
+            });
+            //Aktywacja przycisku "Dodawanie"
+            $(document).on('click', '#' + id + '-plus', function() {
+                var val = $('#' + id + '-count').val();
+                val = parseInt(val);
+                val += 1;
+                $('#' + id + '-count').val(val);
+
+                self.updateObjPhotos(val, id);
+                self.updateParams();
+            });
+            //Aktywacja przycisku "Obejmowanie"
+            $(document).on('click', '#' + id + '-minus', function() {
+                var val = $('#' + id + '-count').val();
+                val = parseInt(val);
+                val -= 1;
+                $('#' + id + '-count').val(val);
+
+                self.updateObjPhotos(val, id);
+                self.updateParams();
+            });
+            //Aktywacja Na każdą zmiane inputa "Odbitki"
+            $('#' + id + '-count').on('change', function() {
+                const val = $('#' + id + '-count').val();
+
+                self.updateObjPhotos(val, id);
+                self.updateParams();
+            });
+
+            $('#' + id + '-size').on('change', function() {
+                const val = $('#' + id + '-size').val();
+
+                self.updateObjPhotosSize(val, id);
+                self.updateParams();
+            });
+            self.updateParams();
+        }
+        //Usuwa zadjęcia z formularza
+        removePhoto(id) {
+            const self = this;
+            self.photos = self.photos.filter(photo => photo.id !== id); // Usuwamy zdjęcie z zmiennej typu lista
+            $('#' + id).remove(); //Usuwamy do html'a
+            self.updateParams();
+        }
+        //Aktualizuje count na podstawie liczby odbitek
+        updateObjPhotos(val, id) {
+            const self = this;
+            self.photos.forEach(photo => {
+                if (photo.id == id) {
+                    photo.count = parseInt(val);
+                }
+            });
+        }
+        //Aktualizuje format
+        updateObjPhotosSize(val, id) {
+            const self = this;
+            self.photos.forEach(photo => {
+                if (photo.id == id) {
+                    photo.size = val;
+                }
+            });
+        }
+        getRecordResume(name, psc, price) {
+            return `
+            <button type="button" class="hover:cursor-default w-full h-full p-4 flex flex-row justify-between bg-zinc-800 border border-zinc-700 rounded-xl cursor-pointer peer-checked:border-yellow-500 peer-checked:bg-zinc-900 hover:bg-zinc-900">
+                <div class="w-1/2 flex flex-col items-start">
+                    <span class="font-semibold text-lg text-white">
+                        ${name}
+                    </span>
+                    <p class="text-xs text-zinc-400">
+                        ${psc} zł/odbitka
+                    </p>
+                </div>
+                <div class="w-1/2 flex flex-col items-end">
+                    <span class="font-semibold text-lg text-white">
+                        ${price} zł
+                    </span>
+                </div>
+            </button>
+            `;
+        }
     }
     $(document).ready(function() {
-    let csrf = $('input[name="_token"]');
-    var resumeCounter = 0;
+        const form = new Form();
+        let csrf = $('input[name="_token"]');
 
-
-    uploader = new Dropzone(".dropzone",{
-        url: "{{ route('form.store') }}", // Poprawny URL do obsługi uploadu
+        uploader = new Dropzone(".dropzone", {
+            url: "{{ route('form.store') }}", // Poprawny URL do obsługi uploadu
             maxFiles: 1000, // Maksymalna liczba plików
             maxFilesize: 50, // Maksymalny rozmiar pliku (MB)
             acceptedFiles: 'image/*', // Akceptowane typy plików
             dictDefaultMessage: "Przeciągnij i upuść zdjęcia tutaj lub kliknij, aby wybrać",
             headers: {
                 '_token': csrf.val(),
-            }, // Wsparcie dla tokenu CSRF w Laravel
+            },
             init: function() {
                 this.on("success", function(file, response) {
-                    console.log("response:", response['file_name']);
-                    //pokazuje elementy
-                    document.querySelectorAll('.del').forEach(element => {
-                        element.classList.remove('hidden');
-                    });  
-                    //pokazywanie pełnego podglądu zdjęć
-                    $('#photos').append(getCard(response['file_name']));
-                    //licznik 
-                    resumeCounter += 1;
-                    $('#resume-count').html(resumeCounter);
+                    form.showAll();
+                    form.addPhoto(response['fileId'], response['imageData']);
                 });
                 this.on("error", function(file, response) {
                     console.log("Wystąpił błąd podczas przesyłania pliku:", response);
-                    document.querySelectorAll('.del').forEach(element => {
-                        element.classList.remove('hidden');
-                    });
                 });
             }
-        });//end drop zone
-
-        uploader.on("success", function(file,response) {
-            console.log(response)
         });
     });
 </script>
@@ -227,7 +429,7 @@
             </div>
             <div class="flex flex-row justify-between gap-4 w-full">
                 <h1 class="font-bold md:leading-tight text-white text-xl my-2 text-center">
-                    Zmień parametry następnych zdjęć
+                    Zmień parametry wszystkich zdjęć
                 </h1>
             </div>
 
@@ -282,7 +484,7 @@
 <script>
     $(document).ready(function() {
         $('.del').addClass('hidden');
-        
+
         // Pokazuje modal i przyciemnia resztę strony
         $('.params').on('click', function() {
             $('#modalOverlay').removeClass('hidden'); // Pokazuje tło
@@ -301,4 +503,38 @@
         });
     });
 </script>
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+<!-- JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<input type="hidden" value="{{Session::get('success')}}" id="success">
+<input type="hidden" value="{{Session::get('fail')}}" id="fail">
+<script>
+    $(document).ready(function() {
+        toastr.options = {
+            "positionClass": "toast-top-center", // Wyświetl na środku u góry
+            "timeOut": "5000", // Czas trwania (5 sekund)
+            "closeButton": true, // Dodanie przycisku zamknięcia
+            "progressBar": true // Pokaż pasek postępu
+        };
+    });
+</script>
+<!--SUCCESS-->
+@if(Session::has('success'))
+<script>
+    $(document).ready(function() {
+        var success = $('#success').val();
+        toastr.success(success);
+    });
+</script>
+@endif
+<!--DANGER-->
+@if(Session::has('fail'))
+<script>
+    $(document).ready(function() {
+        var fail = $('#fail').val();
+        toastr.error(fail);
+    });
+</script>
+@endif
 @endsection

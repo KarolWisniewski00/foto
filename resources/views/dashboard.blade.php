@@ -16,22 +16,19 @@
                                     Zdjęcie
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    Email
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Numer telefonu
-                                </th>
-                                <th scope="col" class="px-6 py-3">
                                     Format
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     Wykończenie
                                 </th>
                                 <th scope="col" class="px-6 py-3">
+                                    Ilość odbitek
+                                </th>
+                                <th scope="col" class="px-6 py-3">
                                     Pobieranie
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    Podgląd
+                                    Zamówienie
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     Usuwanie
@@ -46,16 +43,6 @@
                                 </td>
                                 <td class="px-6 py-4">
                                     <div class="font-medium text-gray-50">
-                                        {{$photo->email}}
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <div class="font-medium text-gray-50">
-                                        {{$photo->phone}}
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <div class="font-medium text-gray-50">
                                         {{$photo->format}}
                                     </div>
                                 </td>
@@ -65,10 +52,15 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-50">
+                                        {{$photo->count}}
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
                                     <a href="{{route('photo.download', $photo)}}" class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-600 focus:z-10 focus:ring-4 focus:ring-gray-200"><i class="fa-solid fa-cloud-arrow-down"></i></a>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <a href="" class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-600 focus:z-10 focus:ring-4 focus:ring-gray-200"><i class="fa-solid fa-eye"></i></a>
+                                    <a href="{{route('order.show', $photo->order)}}" class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-600 focus:z-10 focus:ring-4 focus:ring-gray-200"><i class="fa-solid fa-eye"></i></a>
                                 </td>
                                 <td class="px-6 py-4">
                                     <form action="{{route('photo.delete', $photo)}}" method="POST" onsubmit="return confirm('Czy na pewno chcesz usunąć to zdjęcie?');">

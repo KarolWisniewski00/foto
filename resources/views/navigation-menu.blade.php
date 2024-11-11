@@ -12,11 +12,11 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Grupy') }}
+                    <x-nav-link href="{{ route('dashboard') }}" :active="Str::startsWith(request()->path(), 'dashboard/order')">
+                        {{ __('Zamówienia') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('group') }}" :active="request()->routeIs('group')">
-                        {{ __('Wszytko') }}
+                    <x-nav-link href="{{ route('photo') }}" :active="request()->routeIs('photo')">
+                        {{ __('Wszystkie zdjęcia') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -142,11 +142,11 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Grupy') }}
+            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="Str::startsWith(request()->path(), 'dashboard/order')">
+                {{ __('Zamówienia') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('group') }}" :active="request()->routeIs('group')">
-                {{ __('Wszystko') }}
+            <x-responsive-nav-link href="{{ route('photo') }}" :active="request()->routeIs('photo')">
+                {{ __('Wszystkie zdjęcia') }}
             </x-responsive-nav-link>
         </div>
 

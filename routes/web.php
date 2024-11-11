@@ -5,6 +5,8 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\OfferController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PhotoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,14 +25,23 @@ Route::get('/offer', [OfferController::class, 'index'])->name('offer');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/create', [FormController::class, 'create'])->name('form.create');
 Route::post('/store', [FormController::class, 'store'])->name('form.store');
-Route::delete('/delete/{photo}', [FormController::class, 'delete'])->name('photo.delete');
-Route::get('/download/{photo}', [FormController::class, 'download'])->name('photo.download');
+Route::post('/store_form', [FormController::class, 'store_form'])->name('form.store_form');
 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', [AdminController::class, 'group'])->name('dashboard');
-    Route::get('/group', [AdminController::class, 'index'])->name('group');
+    Route::prefix('dashboard')->group(function () {
+        Route::prefix('order')->group(function () {
+            Route::get('/', [OrderController::class, 'index'])->name('dashboard');
+            Route::get('/show/{order}', [OrderController::class, 'show'])->name('order.show');
+        });
+
+        Route::prefix('photo')->group(function () {
+            Route::get('/', [PhotoController::class, 'index'])->name('photo');
+            Route::get('/download/{photo}', [PhotoController::class, 'download'])->name('photo.download');
+            Route::delete('/delete/{photo}', [PhotoController::class, 'delete'])->name('photo.delete');
+        });
+    });
 });

@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
+use App\Models\Order;
 use App\Models\Photo;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class FormController extends Controller
 {
@@ -13,8 +17,15 @@ class FormController extends Controller
     }
 
     public function store(Request $request)
-    {   
-        //return response()->json(['success' => 'Zdjęcie zostało pomyślnie przesłane.']);
+    {
+        $file = $request->file('file');
+        $imageData = base64_encode(file_get_contents($file));
+        $fileId = uniqid();
+
+        return response()->json([
+            'imageData' => $imageData,
+            'fileId' => $fileId,
+        ]);
         //$email = $request->input('email');
         //$phone = $request->input('phone');
         //$format = $request->input('format');
@@ -42,50 +53,50 @@ class FormController extends Controller
             return response()->json(['fail' => 'Zdjęcie nie zostało zapisane.']);
         }
     }
-    public function delete(Photo $photo)
+    public function store_form(Request $request)
     {
-        // Znalezienie zdjęcia na podstawie ID
-        $photo = Photo::find($photo->id);
-    
-        // Sprawdzenie, czy zdjęcie istnieje
-        if (!$photo) {
-            return response()->json(['fail' => 'Zdjęcie nie zostało znalezione.'], 404);
+        $photos = json_decode($request->photos, true);
+        $rows = json_decode($request->rows, true);
+
+        //tworzenie zamównienia
+        $order = new Order();
+        $order->email = $request->email;
+        $order->phone = $request->phone;
+        $order->name = $request->name;
+        $order->total_price = $request->total_price;
+        $order->total_count = $request->total_count;
+        $order->save();
+
+        foreach ($photos as $key => $element) {
+            $file_name = time() . rand(1, 100) . '.png';
+            $photo = new Photo();
+            $photo->file_name = $file_name;
+            $photo->order_id = $order->id;
+            $photo->format = $element['format'];
+            $photo->ending = '$ending';
+            $photo->count = $element['count'];
+            $photo->save();
+
+            // Zdekodowanie danych base64
+            $image_data = base64_decode($element['src']);
+            $path = public_path('photo/' . $file_name);
+
+            // Upewnij się, że katalog "photo" istnieje w "public"
+            if (!file_exists(public_path('photo'))) {
+                mkdir(public_path('photo'), 0755, true); // Tworzy katalog, jeśli nie istnieje
+            }
+
+            // Zapisanie pliku na dysku
+            file_put_contents($path, $image_data);
         }
-    
-        // Ścieżka do pliku w katalogu public/photo
-        $filePath = public_path('photo/' . $photo->file_name);
-    
-        // Sprawdzenie, czy plik istnieje i próba jego usunięcia
-        if (file_exists($filePath)) {
-            unlink($filePath); // Usuwanie pliku
+        foreach ($rows as $key => $value) {
+            $item = new Item();
+            $item->name = $value['type'];
+            $item->price = $value['psc'];
+            $item->total = $value['price'];
+            $item->order_id = $order->id;
+            $item->save();
         }
-    
-        // Usuwanie rekordu z bazy danych
-        $photo->delete();
-    
-        return redirect()->route('group')->with('success', 'Zdjęcie zostało usunięte.');
+        return redirect()->route('form.create')->with('success', 'Zdjęcia zostały przesłane');
     }
-    
-    public function download(Photo $photo)
-    {
-        // Znalezienie zdjęcia na podstawie ID
-        $photo = Photo::find($photo->id);
-    
-        // Sprawdzenie, czy zdjęcie istnieje
-        if (!$photo) {
-            return response()->json(['fail' => 'Zdjęcie nie zostało znalezione.'], 404);
-        }
-    
-        // Ścieżka do pliku w katalogu public/photo
-        $filePath = public_path('photo/' . $photo->file_name);
-    
-        // Sprawdzenie, czy plik istnieje
-        if (!file_exists($filePath)) {
-            return response()->json(['fail' => 'Plik nie istnieje.'], 404);
-        }
-    
-        // Pobranie pliku
-        return response()->download($filePath);
-    }
-    
 }
