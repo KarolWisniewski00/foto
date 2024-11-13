@@ -34,7 +34,9 @@
                     <div>
                         <span class="font-semibold text-lg text-white">
                         Do dokumentów
+                         
                         </span>
+                        <p class="font-semibold text-lg text-white">Paszportowe, Dowodowe, Legitymacyjne</p>
                         <p class="text-xs text-red-500">
                             Zdjęcia z retuszem - gotowe na poczekaniu
                         </p>
