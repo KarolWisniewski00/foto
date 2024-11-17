@@ -18,6 +18,9 @@
                     <x-nav-link href="{{ route('photo') }}" :active="request()->routeIs('photo')">
                         {{ __('Wszystkie zdjęcia') }}
                     </x-nav-link>
+                    <x-nav-link href="{{ route('price') }}" :active="request()->routeIs('price')">
+                        {{ __('Cennik') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -147,6 +150,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('photo') }}" :active="request()->routeIs('photo')">
                 {{ __('Wszystkie zdjęcia') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link href="{{ route('price') }}" :active="request()->routeIs('price')">
+                {{ __('Cennik') }}
             </x-responsive-nav-link>
         </div>
 

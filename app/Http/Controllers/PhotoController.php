@@ -9,8 +9,11 @@ class PhotoController extends Controller
 {
     public function index()
     {
-        $photos = Photo::all();
-        return view('dashboard', compact('photos'));
+        $photos = Photo::paginate(20);
+        $folderSizeBytes = $this->getFolderSize(public_path('photo'));
+        // Przekładamy rozmiar na bardziej przyjazny format (MB)
+        $folderSizeMB = number_format($folderSizeBytes / (1024 * 1024), 2);
+        return view('dashboard', compact('photos','folderSizeMB'));
     }
     public function delete(Photo $photo)
     {

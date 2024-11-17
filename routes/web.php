@@ -7,6 +7,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\OfferController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\PriceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,13 +36,19 @@ Route::middleware([
     Route::prefix('dashboard')->group(function () {
         Route::prefix('order')->group(function () {
             Route::get('/', [OrderController::class, 'index'])->name('dashboard');
-            Route::get('/show/{order}', [OrderController::class, 'show'])->name('order.show');
+            Route::get('show/{order}', [OrderController::class, 'show'])->name('order.show');
+            Route::get('download-zip/{order}', [OrderController::class, 'download'])->name('order.download.zip');
+            Route::delete('delete/{order}', [OrderController::class, 'delete'])->name('order.delete');
+
         });
 
         Route::prefix('photo')->group(function () {
             Route::get('/', [PhotoController::class, 'index'])->name('photo');
             Route::get('/download/{photo}', [PhotoController::class, 'download'])->name('photo.download');
             Route::delete('/delete/{photo}', [PhotoController::class, 'delete'])->name('photo.delete');
+        });
+        Route::prefix('price')->group(function () {
+            Route::get('/', [PriceController::class, 'index'])->name('price');
         });
     });
 });

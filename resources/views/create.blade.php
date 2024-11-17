@@ -48,7 +48,7 @@
                 </div>
 
             </div>
-            <form action="{{ route('form.store_form') }}" method="post" class="del flex flex-col justify-center w-full">
+            <form id="myForm" action="{{ route('form.store_form') }}" method="post" class="del flex flex-col justify-center w-full">
                 @csrf
                 <div class="del">
                     <label for="email" class="block my-2 text-sm font-medium text-white">Email</label>
@@ -103,7 +103,7 @@
                 </label>
             </form>
             <div class="del rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-4 flex flex-row gap-4 items-center justify-center mb-4 w-full">
-                <button type="button"
+                <button id="submit2" type="button"
                     class="text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-green-600 text-green-50 hover:bg-green-700 focus:outline-none focus:bg-green-700 disabled:opacity-50 disabled:pointer-events-none">
                     <i class="fa-solid fa-check mr-2"></i>Złóż zamówienie
                 </button>
@@ -124,15 +124,15 @@
             self.id = id;
             self.form = form;
             self.size = '10x15';
-            self.ending = null;
+            self.ending = 'blysk';
             self.count = 1;
         }
         // Zwraca widok zdjęcia z ustawieniami 
         getCard() {
             const self = this;
             return `
-            <div id="${self.id}" class="p-4 w-full h-full bg-zinc-800 rounded-lg border border-zinc-700 hover:bg-zinc-900">
-                <img id="" class-"w-full h-auto rounded-lg" alt="" src="data:image/jpeg;base64,${self.src}">
+            <div id="${self.id}" class="flex flex-col p-4 w-full h-full bg-zinc-800 rounded-lg border border-zinc-700 hover:bg-zinc-900">
+                <img id="" class-"mx-auto w-full h-auto rounded-lg" alt="" src="data:image/jpeg;base64,${self.src}">
                 <div class="flex flex-col justify-between gap-4">
                     <div class="w-full">
                         <label for="${self.id}-size" class="block mt-2 mb-4 text-sm font-medium text-white">Rozmiar</label>
@@ -142,10 +142,10 @@
                         </select>
                     </div>
                     <div class="w-full">
-                        <label for="countries" class="block mb-4 text-sm font-medium text-white">Wykończenie</label>
-                        <select id="countries" class="bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option selected>Błysk</option>
-                            <option value="">Mat</option>
+                        <label for="${self.id}-ending" class="block mb-4 text-sm font-medium text-white">Wykończenie</label>
+                        <select id="${self.id}-ending" class="bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option selected value="blysk">Błysk</option>
+                            <option value="mat">Mat</option>
                         </select>
                     </div>
                     <div>
@@ -276,6 +276,7 @@
                     type: type,
                     psc: psc,
                     price: price.toFixed(2),
+                    count: counter,
                 });
             });
             self.photos.forEach(photo => {
@@ -283,6 +284,7 @@
                     count: photo.count,
                     src: photo.src,
                     format: photo.size,
+                    ending: photo.ending,
                 });
             });
             $('#photos-send').val(JSON.stringify(listphotosSend));
@@ -341,6 +343,12 @@
                 self.updateObjPhotosSize(val, id);
                 self.updateParams();
             });
+            $('#' + id + '-ending').on('change', function() {
+                const val = $('#' + id + '-ending').val();
+
+                self.updateObjPhotosEnding(val, id);
+                self.updateParams();
+            });
             self.updateParams();
         }
         //Usuwa zadjęcia z formularza
@@ -365,6 +373,15 @@
             self.photos.forEach(photo => {
                 if (photo.id == id) {
                     photo.size = val;
+                }
+            });
+        }
+        //Aktualizuje format
+        updateObjPhotosEnding(val, id) {
+            const self = this;
+            self.photos.forEach(photo => {
+                if (photo.id == id) {
+                    photo.ending = val;
                 }
             });
         }
@@ -396,7 +413,7 @@
             url: "{{ route('form.store') }}", // Poprawny URL do obsługi uploadu
             maxFiles: 1000, // Maksymalna liczba plików
             maxFilesize: 50, // Maksymalny rozmiar pliku (MB)
-            acceptedFiles: 'image/*', // Akceptowane typy plików
+            acceptedFiles: 'image/jpeg, image/jpg, image/png',
             dictDefaultMessage: "Przeciągnij i upuść zdjęcia tutaj lub kliknij, aby wybrać",
             headers: {
                 '_token': csrf.val(),
@@ -405,6 +422,7 @@
                 this.on("success", function(file, response) {
                     form.showAll();
                     form.addPhoto(response['fileId'], response['imageData']);
+                    this.removeFile(file);
                 });
                 this.on("error", function(file, response) {
                     console.log("Wystąpił błąd podczas przesyłania pliku:", response);
@@ -483,6 +501,11 @@
 
 <script>
     $(document).ready(function() {
+        $('#submit2').on('click', function() {
+            $('#submit').click();
+        });
+
+
         $('.del').addClass('hidden');
 
         // Pokazuje modal i przyciemnia resztę strony

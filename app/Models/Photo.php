@@ -18,4 +18,14 @@ class Photo extends Model
     {
         return $this->belongsTo(Order::class);
     }
+    protected static function booted()
+    {
+        static::deleting(function ($photo) {
+            // Usuwanie pliku zdjęcia z serwera przed usunięciem rekordu z bazy danych
+            $filePath = public_path('photo/' . $photo->file_name);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        });
+    }
 }

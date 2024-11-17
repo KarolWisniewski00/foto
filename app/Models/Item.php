@@ -12,6 +12,7 @@ class Item extends Model
         'price',
         'total',
         'order_id',
+        'count',
     ];
     public function order()
     {

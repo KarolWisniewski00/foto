@@ -26,32 +26,26 @@ class FormController extends Controller
             'imageData' => $imageData,
             'fileId' => $fileId,
         ]);
-        //$email = $request->input('email');
-        //$phone = $request->input('phone');
-        //$format = $request->input('format');
-        //$ending = $request->input('ending');
-        //Przenoszenie pliku z formularza do public/photo
-        $file = $request->file('file');
-        $fileName = time() . rand(1, 100) . '.' . $file->extension();
-        $res = $file->move(public_path('photo'), $fileName);
+    }
+    public function getFolderSize($folderPath)
+    {
+        $totalSize = 0;
 
-        $photo = new Photo();
-        $photo->file_name = $fileName;
-        $photo->email = '$email';
-        $photo->phone = '$phone';
-        $photo->format = '$format';
-        $photo->ending = '$ending';
+        // Sprawdzamy, czy folder istnieje
+        if (is_dir($folderPath)) {
+            // Pobieramy wszystkie pliki w folderze
+            $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($folderPath, RecursiveDirectoryIterator::SKIP_DOTS), RecursiveIteratorIterator::LEAVES_ONLY);
 
-        $photo->save();
-
-        if ($res) {
-            return response()->json([
-                'success' => 'Zdjęcie zostało pomyślnie przesłane.',
-                'file_name' => $fileName
-            ]);
-        } else {
-            return response()->json(['fail' => 'Zdjęcie nie zostało zapisane.']);
+            foreach ($files as $file) {
+                // Ignorujemy foldery
+                if (!$file->isDir()) {
+                    // Dodajemy rozmiar pliku do sumy
+                    $totalSize += $file->getSize();
+                }
+            }
         }
+
+        return $totalSize;
     }
     public function store_form(Request $request)
     {
@@ -73,7 +67,7 @@ class FormController extends Controller
             $photo->file_name = $file_name;
             $photo->order_id = $order->id;
             $photo->format = $element['format'];
-            $photo->ending = '$ending';
+            $photo->ending = $element['ending'];
             $photo->count = $element['count'];
             $photo->save();
 
@@ -95,6 +89,7 @@ class FormController extends Controller
             $item->price = $value['psc'];
             $item->total = $value['price'];
             $item->order_id = $order->id;
+            $item->count = $value['count'];
             $item->save();
         }
         return redirect()->route('form.create')->with('success', 'Zdjęcia zostały przesłane');
