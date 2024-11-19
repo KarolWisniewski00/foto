@@ -27,26 +27,7 @@ class FormController extends Controller
             'fileId' => $fileId,
         ]);
     }
-    public function getFolderSize($folderPath)
-    {
-        $totalSize = 0;
 
-        // Sprawdzamy, czy folder istnieje
-        if (is_dir($folderPath)) {
-            // Pobieramy wszystkie pliki w folderze
-            $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($folderPath, RecursiveDirectoryIterator::SKIP_DOTS), RecursiveIteratorIterator::LEAVES_ONLY);
-
-            foreach ($files as $file) {
-                // Ignorujemy foldery
-                if (!$file->isDir()) {
-                    // Dodajemy rozmiar pliku do sumy
-                    $totalSize += $file->getSize();
-                }
-            }
-        }
-
-        return $totalSize;
-    }
     public function store_form(Request $request)
     {
         $photos = json_decode($request->photos, true);

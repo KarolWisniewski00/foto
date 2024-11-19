@@ -1,6 +1,70 @@
 @extends('layouts.foto')
 
 @section('content')
+<div id="modalOverlay" class="fixed inset-0 bg-black opacity-50 hidden"></div>
+
+<div id="drawer" class="fixed bottom-0 left-0 z-50 w-full hidden">
+    <div class="grid h-full max-w-lg grid-cols-1 mx-auto py-3 w-full sm:w-fit px-4 sm:px-4 sm:px-8 sm:mt-5 h-fit bg-zinc-800 border-t border-zinc-700 rounded-t-lg">
+        <div class="flex flex-col gap-4  w-full">
+            <div class="flex flex-row justify-between gap-4 w-full">
+                <h1 class="font-bold md:leading-tight text-white text-xl my-2 text-center">
+
+                </h1>
+                <button type="button" class="close text-center inline-flex justify-center items-center gap-x-2 bg-transparent text-zinc-400 hover:text-red-700 transition-all text-sm">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="flex flex-row justify-between gap-4 w-full">
+                <h1 class="font-bold md:leading-tight text-white text-xl my-2 text-center">
+                    Zmień parametry wszystkich zdjęć
+                </h1>
+            </div>
+
+            <div class="w-full">
+                <label for="modal-size" class="block mt-2 mb-4 text-sm font-medium text-white">
+                    Rozmiar
+                </label>
+                <select id="modal-size" class="bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option selected value="10x15">
+                        10x15 cm
+                    </option>
+                    <option value="13x18">13x18 cm</option>
+                </select>
+            </div>
+            <div class="w-full">
+                <label for="modal-ending" class="block mb-4 text-sm font-medium text-white">
+                    Wykończenie
+                </label>
+                <select id="modal-ending" class="bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option selected value="blysk">Błysk</option>
+                    <option value="mat">Mat</option>
+                </select>
+            </div>
+            <div>
+                <label for="modal-count" class="block mb4 text-sm font-medium text-white">Odbitki</label>
+                <div class="flex rounded-lg bg-zinc-800 border border-zinc-700 ">
+                    <input value="1" type="text" id="modal-count" class="text-white p-2.5 block w-full bg-zinc-800 text-sm focus:z-10 focus:ring-red-500 focus:border-red-500">
+                    <button type="button" value="1" class="-ms-px py-4 px-4 font-bold text-center md:text-start inline-flex justify-center items-center gap-x-2 border border-transparent bg-purple-600 text-purple-50 align-middle hover:bg-purple-700 focus:outline-none focus:bg-purple-700 disabled:opacity-50 disabled:pointer-events-none transition-all text-sm">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <button type="button" class="py-4 px-4 rounded-r-lg font-bold text-center md:text-start inline-flex justify-center items-center gap-x-2 border border-transparent bg-zinc-600 text-zinc-50 align-middle hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none transition-all text-sm">
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="w-full rounded-lg max-w-4xl mx-auto flex flex-row gap-4 items-center justify-center">
+                <button type="button" id="modal-save"
+                    class="close w-full h-full text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-green-600 text-green-50 hover:bg-green-700 focus:outline-none focus:bg-green-700 disabled:opacity-50 disabled:pointer-events-none">
+                    <i class="fa-solid fa-check mr-2"></i>Zapisz zmiany
+                </button>
+                <button type="button"
+                    class="close w-full h-full text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-zinc-600 text-zinc-50 hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none">
+                    <i class="fa-solid fa-xmark mr-2"></i>Anuluj
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 @csrf
 <div class="px-3 lg:px-0">
     <div class="px-3 lg:px-0 bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 md:mt-5 flex flex-col md:flex-row md:justify-between gap-3 md:gap-5">
@@ -270,7 +334,11 @@
                 });
 
                 //dodaj rekord do podsumowania
-                $('#' + type).html(self.getRecordResume(type, psc, price.toFixed(2)));
+                if(price.toFixed(2) == 0){
+                    $('#' + type).html('');
+                }else{
+                    $('#' + type).html(self.getRecordResume(type, psc, price.toFixed(2)));
+                }
                 prices += price;
                 rows.push({
                     type: type,
@@ -429,83 +497,11 @@
                 });
             }
         });
-    });
-</script>
 
-<div id="modalOverlay" class="fixed inset-0 bg-black opacity-50 hidden"></div>
-
-<div id="drawer" class="fixed bottom-0 left-0 z-50 w-full hidden">
-    <div class="grid h-full max-w-lg grid-cols-1 mx-auto py-3 w-full sm:w-fit px-4 sm:px-4 sm:px-8 sm:mt-5 h-fit bg-zinc-800 border-t border-zinc-700 rounded-t-lg">
-        <div class="flex flex-col gap-4  w-full">
-            <div class="flex flex-row justify-between gap-4 w-full">
-                <h1 class="font-bold md:leading-tight text-white text-xl my-2 text-center">
-
-                </h1>
-                <button type="button" class="close text-center inline-flex justify-center items-center gap-x-2 bg-transparent text-zinc-400 hover:text-red-700 transition-all text-sm">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="flex flex-row justify-between gap-4 w-full">
-                <h1 class="font-bold md:leading-tight text-white text-xl my-2 text-center">
-                    Zmień parametry wszystkich zdjęć
-                </h1>
-            </div>
-
-            <div class="w-full">
-                <label for="countries" class="block mt-2 mb-4 text-sm font-medium text-white">
-                    Rozmiar
-                </label>
-                <select id="countries" class="bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option selected>
-                        10x15 cm
-                    </option>
-                </select>
-            </div>
-            <div class="w-full">
-                <label for="countries" class="block mb-4 text-sm font-medium text-white">
-                    Wykończenie
-                </label>
-                <select id="countries" class="bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option selected>
-                        Błysk</option>
-                    <option value="">
-                        Mat
-                    </option>
-                </select>
-            </div>
-            <div>
-                <label for="hs-trailing-button-add-on-multiple-add-ons" class="block mb4 text-sm font-medium text-white">Odbitki</label>
-                <div class="flex rounded-lg bg-zinc-800 border border-zinc-700 ">
-                    <input type="text" id="hs-trailing-button-add-on-multiple-add-ons" name="hs-trailing-button-add-on-multiple-add-ons" class="text-white p-2.5 block w-full bg-zinc-800 text-sm focus:z-10 focus:ring-red-500 focus:border-red-500">
-                    <button type="button" value="1" class="-ms-px py-4 px-4 font-bold text-center md:text-start inline-flex justify-center items-center gap-x-2 border border-transparent bg-purple-600 text-purple-50 align-middle hover:bg-purple-700 focus:outline-none focus:bg-purple-700 disabled:opacity-50 disabled:pointer-events-none transition-all text-sm">
-                        <i class="fa-solid fa-plus"></i>
-                    </button>
-                    <button type="button" class="py-4 px-4 rounded-r-lg font-bold text-center md:text-start inline-flex justify-center items-center gap-x-2 border border-transparent bg-zinc-600 text-zinc-50 align-middle hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none transition-all text-sm">
-                        <i class="fa-solid fa-minus"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="w-full rounded-lg max-w-4xl mx-auto flex flex-row gap-4 items-center justify-center">
-                <button type="button"
-                    class="close w-full h-full text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-green-600 text-green-50 hover:bg-green-700 focus:outline-none focus:bg-green-700 disabled:opacity-50 disabled:pointer-events-none">
-                    <i class="fa-solid fa-check mr-2"></i>Zapisz zmiany
-                </button>
-                <button type="button"
-                    class="close w-full h-full text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-zinc-600 text-zinc-50 hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none">
-                    <i class="fa-solid fa-xmark mr-2"></i>Anuluj
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    $(document).ready(function() {
+        //przycisk submit2
         $('#submit2').on('click', function() {
             $('#submit').click();
         });
-
-
         $('.del').addClass('hidden');
 
         // Pokazuje modal i przyciemnia resztę strony
@@ -521,8 +517,22 @@
         });
 
         // Zapisz zmiany nie robi nic w tej chwili
-        $('#save').on('click', function() {
-            // Obecnie brak akcji
+        var counter = 0;
+        $('#modal-save').on('click', function() {
+
+            form.photos.forEach(photo => {
+                form.photos[counter].count = $('#modal-count').val();
+                form.photos[counter].ending = $('#modal-ending').val();
+                form.photos[counter].size = $('#modal-size').val();
+                counter++;
+            });
+
+            form.updateParams();
+            $('#photos').html('');
+
+            form.photos.forEach(photo => {
+                $('#photos').append(photo.getCard());
+            });
         });
     });
 </script>

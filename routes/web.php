@@ -34,12 +34,12 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::prefix('dashboard')->group(function () {
+        Route::get('/', [OrderController::class, 'dashboard']);
         Route::prefix('order')->group(function () {
             Route::get('/', [OrderController::class, 'index'])->name('dashboard');
             Route::get('show/{order}', [OrderController::class, 'show'])->name('order.show');
             Route::get('download-zip/{order}', [OrderController::class, 'download'])->name('order.download.zip');
             Route::delete('delete/{order}', [OrderController::class, 'delete'])->name('order.delete');
-
         });
 
         Route::prefix('photo')->group(function () {

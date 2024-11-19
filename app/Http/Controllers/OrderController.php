@@ -17,7 +17,7 @@ class OrderController extends Controller
         $folderSizeBytes = $this->getFolderSize(public_path('photo'));
         // Przekładamy rozmiar na bardziej przyjazny format (MB)
         $folderSizeMB = number_format($folderSizeBytes / (1024 * 1024), 2);
-        return view('admin.group.index', compact('orders','folderSizeMB'));
+        return view('admin.group.index', compact('orders', 'folderSizeMB'));
     }
     public function show(Order $order)
     {
@@ -63,7 +63,6 @@ class OrderController extends Controller
 
         // Otwieramy plik ZIP do zapisu
         if ($zip->open($zipPath, ZipArchive::CREATE | ZipArchive::OVERWRITE) === TRUE) {
-
             // Przechodzimy przez wszystkie przedmioty i dodajemy je do ZIP w odpowiednich katalogach
             foreach ($items as $item) {
 
@@ -78,6 +77,7 @@ class OrderController extends Controller
 
                 // Przechodzimy przez wszystkie unikalne endingi
                 foreach ($endings as $ending) {
+                    $list_of_counts = [];
 
                     // Tworzymy podfolder dla każdego endingu
                     $zip->addEmptyDir("{$item->name}/{$ending}");
@@ -85,15 +85,29 @@ class OrderController extends Controller
                     // Filtrujemy zdjęcia, które odpowiadają danemu endingowi
                     $endingPhotos = $itemPhotos->where('ending', $ending);
 
-                    // Dodajemy zdjęcia do odpowiedniego folderu i podfolderu
-                    foreach ($endingPhotos as $photo) {
-                        // Ścieżka do zdjęcia w folderze publicznym
-                        $filePath = public_path('photo/' . $photo->file_name);
+                    foreach ($endingPhotos as $i) {
+                        // Sprawdź, czy element już istnieje w tablicy
+                        if (!in_array(strval($i->count), $list_of_counts)) {
+                            array_push($list_of_counts, strval($i->count));
+                        }
+                    };
 
-                        // Sprawdzamy, czy zdjęcie istnieje w folderze publicznym
-                        if (file_exists($filePath)) {
-                            // Dodajemy zdjęcie do folderu w ZIP
-                            $zip->addFile($filePath, "{$item->name}/{$ending}/{$photo->file_name}");
+                    foreach ($list_of_counts as $count) {
+                        // Tworzymy podfolder dla każdego endingu
+                        $zip->addEmptyDir("{$item->name}/{$ending}/{$count}");
+                        // Filtrujemy zdjęcia, które odpowiadają danemu endingowi
+                        $countPhotos = $itemPhotos->where('count', $count);
+
+                        // Dodajemy zdjęcia do odpowiedniego folderu i podfolderu
+                        foreach ($countPhotos as $photo) {
+                            // Ścieżka do zdjęcia w folderze publicznym
+                            $filePath = public_path('photo/' . $photo->file_name);
+
+                            // Sprawdzamy, czy zdjęcie istnieje w folderze publicznym
+                            if (file_exists($filePath)) {
+                                // Dodajemy zdjęcie do folderu w ZIP
+                                $zip->addFile($filePath, "{$item->name}/{$ending}/{$count}/{$photo->file_name}");
+                            }
                         }
                     }
                 }
@@ -147,5 +161,8 @@ class OrderController extends Controller
 
         // Możemy przekierować użytkownika z komunikatem o sukcesie
         return redirect()->route('dashboard')->with('success', 'Zamówienie zostało usunięte wraz z wszystkimi powiązanymi danymi.');
+    }
+    public function dashboard(){
+        return redirect()->route('dashboard');
     }
 }

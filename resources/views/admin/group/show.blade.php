@@ -7,14 +7,14 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden sm:rounded-lg">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden rounded-lg">
                 <a href="{{ route('dashboard') }}" class="mx-4 mt-8 inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-300 focus:bg-gray-700 dark:focus:bg-gray-300 active:bg-gray-900 dark:active:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
                     <i class="fa-solid fa-chevron-left mr-2"></i>Powrót do zamówień
                 </a>
                 <h1 class="mt-8 mb-4 text-2xl font-medium text-gray-800 dark:text-gray-200 mx-4">
                     Zamówienie
                 </h1>
-                <div class="relative overflow-x-auto sm:rounded-lg my-8 mx-4 bg-gray-100 dark:bg-gray-700 p-4">
+                <div class="relative overflow-x-auto rounded-lg my-8 mx-4 bg-gray-100 dark:bg-gray-700 p-4">
                     <dl class="text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-400 w-full">
                         <div class="flex flex-col pb-3">
                             <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Email</dt>
@@ -98,7 +98,7 @@
                     Zdjęcia
                 </h1>
                 @foreach($items as $item)
-                <div class="mb-8 flex flex-col justify-start items-start mx-4 bg-gray-100 dark:bg-gray-700 rounded-lg p-1">
+                <div class="mb-8 flex flex-col overflow-x-auto justify-start items-start mx-4 bg-gray-100 dark:bg-gray-700 rounded-lg p-1">
                     <h1 class="mt-8 mb-4 text-2xl font-medium text-gray-800 dark:text-gray-200 mx-4">
                         Katalog {{$item->name}}
                     </h1>

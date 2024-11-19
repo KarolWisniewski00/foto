@@ -14,39 +14,306 @@
                 <h1 class="mt-8 mb-4 text-2xl font-medium text-gray-800 dark:text-gray-200 mx-4">
                     Zajęte miejsce {{$folderSizeMB}} MB
                 </h1>
-                <div class="dark:text-white">
-                    '10x15': [{<br>
-                    start: 0,<br>
-                    end: 50,<br>
-                    price: 0.80<br>
-                    },<br>
-                    {<br>
-                    start: 51,<br>
-                    end: 100,<br>
-                    price: 0.75<br>
-                    },<br>
-                    {<br>
-                    start: 101,<br>
-                    end: 150,<br>
-                    price: 0.70<br>
-                    },<br>
-                    ],<br>
-                    '13x18': [{<br>
-                    start: 0,<br>
-                    end: 20,<br>
-                    price: 1.20<br>
-                    },<br>
-                    {<br>
-                    start: 21,<br>
-                    end: 50,<br>
-                    price: 1.10<br>
-                    },<br>
-                    {<br>
-                    start: 51,<br>
-                    end: 100,<br>
-                    price: 0.90<br>
-                    },<br>
-                    ],<br>
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-8 mx-4">
+                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-300">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">
+                                    Nazwa
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Ilość szt start
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Ilość szt koniec
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Cena
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Edycja
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Usuwanie
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+                                <td class="px-6 py-4">
+                                    10x15
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <a href="" class="py-2.5 px-5 text-sm font-medium text-white focus:outline-none bg-blue-500 rounded-lg border border-blue-700 hover:bg-blue-600 focus:z-10 focus:ring-4 focus:ring-blue-700">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <form action="" method="POST" onsubmit="return confirm('Czy na pewno chcesz usunąć to zamówienie?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-red-500 hover:text-white border border-red-600 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+                                <td class="px-6 py-4">
+
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+                                        0
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+                                        50
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+                                        0.80
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <a href="" class="py-2.5 px-5 text-sm font-medium text-white focus:outline-none bg-blue-500 rounded-lg border border-blue-700 hover:bg-blue-600 focus:z-10 focus:ring-4 focus:ring-blue-700">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <form action="" method="POST" onsubmit="return confirm('Czy na pewno chcesz usunąć to zamówienie?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-red-500 hover:text-white border border-red-600 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+                                <td class="px-6 py-4">
+
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+                                        51
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+                                        100
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+                                        0.75
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <a href="" class="py-2.5 px-5 text-sm font-medium text-white focus:outline-none bg-blue-500 rounded-lg border border-blue-700 hover:bg-blue-600 focus:z-10 focus:ring-4 focus:ring-blue-700">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <form action="" method="POST" onsubmit="return confirm('Czy na pewno chcesz usunąć to zamówienie?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-red-500 hover:text-white border border-red-600 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+                                <td class="px-6 py-4">
+
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+                                        101
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+                                        150
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+                                        0.70
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <a href="" class="py-2.5 px-5 text-sm font-medium text-white focus:outline-none bg-blue-500 rounded-lg border border-blue-700 hover:bg-blue-600 focus:z-10 focus:ring-4 focus:ring-blue-700">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <form action="" method="POST" onsubmit="return confirm('Czy na pewno chcesz usunąć to zamówienie?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-red-500 hover:text-white border border-red-600 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <!---->
+                            <tr class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+                                <td class="px-6 py-4">
+                                13x18
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <a href="" class="py-2.5 px-5 text-sm font-medium text-white focus:outline-none bg-blue-500 rounded-lg border border-blue-700 hover:bg-blue-600 focus:z-10 focus:ring-4 focus:ring-blue-700">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <form action="" method="POST" onsubmit="return confirm('Czy na pewno chcesz usunąć to zamówienie?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-red-500 hover:text-white border border-red-600 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+                                <td class="px-6 py-4">
+
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+                                        0
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+                                        20
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+                                        1.20
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <a href="" class="py-2.5 px-5 text-sm font-medium text-white focus:outline-none bg-blue-500 rounded-lg border border-blue-700 hover:bg-blue-600 focus:z-10 focus:ring-4 focus:ring-blue-700">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <form action="" method="POST" onsubmit="return confirm('Czy na pewno chcesz usunąć to zamówienie?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-red-500 hover:text-white border border-red-600 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+                                <td class="px-6 py-4">
+
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+                                        21
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+                                        50
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+                                        1.10
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <a href="" class="py-2.5 px-5 text-sm font-medium text-white focus:outline-none bg-blue-500 rounded-lg border border-blue-700 hover:bg-blue-600 focus:z-10 focus:ring-4 focus:ring-blue-700">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <form action="" method="POST" onsubmit="return confirm('Czy na pewno chcesz usunąć to zamówienie?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-red-500 hover:text-white border border-red-600 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+                                <td class="px-6 py-4">
+
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+                                        51
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+                                        100
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="font-medium text-gray-800 dark:text-gray-50">
+                                        0.90
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <a href="" class="py-2.5 px-5 text-sm font-medium text-white focus:outline-none bg-blue-500 rounded-lg border border-blue-700 hover:bg-blue-600 focus:z-10 focus:ring-4 focus:ring-blue-700">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <form action="" method="POST" onsubmit="return confirm('Czy na pewno chcesz usunąć to zamówienie?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-red-500 hover:text-white border border-red-600 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
