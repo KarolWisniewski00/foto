@@ -43,11 +43,11 @@
             <div>
                 <label for="modal-count" class="block mb4 text-sm font-medium text-white">Odbitki</label>
                 <div class="flex rounded-lg bg-zinc-800 border border-zinc-700 ">
-                    <input value="1" type="text" id="modal-count" class="text-white p-2.5 block w-full bg-zinc-800 text-sm focus:z-10 focus:ring-red-500 focus:border-red-500">
-                    <button type="button" value="1" class="-ms-px py-4 px-4 font-bold text-center md:text-start inline-flex justify-center items-center gap-x-2 border border-transparent bg-purple-600 text-purple-50 align-middle hover:bg-purple-700 focus:outline-none focus:bg-purple-700 disabled:opacity-50 disabled:pointer-events-none transition-all text-sm">
+                    <input value="1" min="1" type="text" id="modal-count" class="text-white p-2.5 block w-full bg-zinc-800 text-sm focus:z-10 focus:ring-red-500 focus:border-red-500">
+                    <button type="button" id="modal-plus" class="-ms-px py-4 px-4 font-bold text-center md:text-start inline-flex justify-center items-center gap-x-2 border border-transparent bg-purple-600 text-purple-50 align-middle hover:bg-purple-700 focus:outline-none focus:bg-purple-700 disabled:opacity-50 disabled:pointer-events-none transition-all text-sm">
                         <i class="fa-solid fa-plus"></i>
                     </button>
-                    <button type="button" class="py-4 px-4 rounded-r-lg font-bold text-center md:text-start inline-flex justify-center items-center gap-x-2 border border-transparent bg-zinc-600 text-zinc-50 align-middle hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none transition-all text-sm">
+                    <button type="button" id="modal-minus" class="py-4 px-4 rounded-r-lg font-bold text-center md:text-start inline-flex justify-center items-center gap-x-2 border border-transparent bg-zinc-600 text-zinc-50 align-middle hover:bg-zinc-700 focus:outline-none focus:bg-zinc-700 disabled:opacity-50 disabled:pointer-events-none transition-all text-sm">
                         <i class="fa-solid fa-minus"></i>
                     </button>
                 </div>
@@ -182,7 +182,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     class Photo {
-        constructor(id, src, form) {
+        constructor(id, src, form, keys, keysEnd) {
             const self = this;
             self.src = src;
             self.id = id;
@@ -190,10 +190,47 @@
             self.size = '10x15';
             self.ending = 'blysk';
             self.count = 1;
+            self.keys = keys;
+            self.keysEnd = keysEnd;
+            self.viewSizesOptions = '';
+            self.viewEndingsOptions = '';
+        }
+        updateViewSizesOptions() {
+            const self = this;
+            self.viewSizesOptions = '';
+            self.keys.forEach(key => {
+                if (key != self.size) {
+                    self.viewSizesOptions = self.viewSizesOptions + `<option value="${key}">${key} cm</option>`;
+                }
+            });
+        }
+        updateViewEndingsOptions() {
+            const self = this;
+            self.viewEndingsOptions = '';
+            self.keysEnd.forEach(key => {
+                if (key != self.ending) {
+                    self.viewEndingsOptions = self.viewEndingsOptions + `<option value="${key}">${self.getEndingPL(key)}</option>`;
+                }
+            });
+        }
+        getEndingPL(ending) {
+            switch (ending) {
+                case 'blysk':
+                    return 'Błysk';
+                    break;
+
+                case 'mat':
+                    return 'Mat';
+                    break;
+                default:
+                    return 'Błysk';
+                    break;
+            }
         }
         // Zwraca widok zdjęcia z ustawieniami 
         getCard() {
             const self = this;
+            self.updateViewSizesOptions();
             return `
             <div id="${self.id}" class="flex flex-col p-4 w-full h-full bg-zinc-800 rounded-lg border border-zinc-700 hover:bg-zinc-900">
                 <img id="" class-"mx-auto w-full h-auto rounded-lg" alt="" src="data:image/jpeg;base64,${self.src}">
@@ -202,14 +239,14 @@
                         <label for="${self.id}-size" class="block mt-2 mb-4 text-sm font-medium text-white">Rozmiar</label>
                         <select id="${self.id}-size" class="bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                             <option value="${self.size}" selected>${self.size} cm</option>
-                            <option value="13x18">13x18 cm</option>
+                            ${self.viewSizesOptions}
                         </select>
                     </div>
                     <div class="w-full">
                         <label for="${self.id}-ending" class="block mb-4 text-sm font-medium text-white">Wykończenie</label>
                         <select id="${self.id}-ending" class="bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option selected value="blysk">Błysk</option>
-                            <option value="mat">Mat</option>
+                            <option selected value="${self.ending}">${self.getEndingPL(self.ending)}</option>
+                            ${self.viewEndingsOptions}
                         </select>
                     </div>
                     <div>
@@ -334,9 +371,9 @@
                 });
 
                 //dodaj rekord do podsumowania
-                if(price.toFixed(2) == 0){
+                if (price.toFixed(2) == 0) {
                     $('#' + type).html('');
-                }else{
+                } else {
                     $('#' + type).html(self.getRecordResume(type, psc, price.toFixed(2)));
                 }
                 prices += price;
@@ -369,7 +406,8 @@
         //Dodaje zdjecia do formularza
         addPhoto(id, src) {
             const self = this;
-            const photo = new Photo(id, src, self); //Stwórz obiekt
+            const keys = Object.keys(self.priceList);
+            const photo = new Photo(id, src, self, keys, ['blysk', 'mat']); //Stwórz obiekt JBC TO TU PODEPNIJ ENDINGI DYNAMICZNE
             $('#photos').append(photo.getCard()); //Dodaj do html'a
             self.photos.push(photo); //Dodaj do obiektu formularz do zmiennej typu lista (siebie)
 
@@ -392,6 +430,9 @@
                 var val = $('#' + id + '-count').val();
                 val = parseInt(val);
                 val -= 1;
+                if (val < 1) {
+                    val = 1; // Wyzeruj wartość, jeśli jest nieprawidłowa
+                }
                 $('#' + id + '-count').val(val);
 
                 self.updateObjPhotos(val, id);
@@ -516,10 +557,29 @@
             $('#drawer').addClass('hidden'); // Ukrywa modal
         });
 
-        // Zapisz zmiany nie robi nic w tej chwili
+        //Aktywacja przycisku "Dodawanie" w modalu
+        $(document).on('click', '#modal-plus', function() {
+            var val = $('#modal-count').val();
+            val = parseInt(val);
+            val += 1;
+            $('#modal-count').val(val);
+        });
+        //Aktywacja przycisku "Obejmowanie" w modalu
+        $(document).on('click', '#modal-minus', function() {
+            var val = $('#modal-count').val();
+            val = parseInt(val);
+            val -= 1;
+            if (val < 1) {
+                val = 1; // Wyzeruj wartość, jeśli jest nieprawidłowa
+            }
+            $('#modal-count').val(val);
+        });
+
+        // Zapisz zmiany
         var counter = 0;
         $('#modal-save').on('click', function() {
 
+            //Aktualizacja obiektów
             form.photos.forEach(photo => {
                 form.photos[counter].count = $('#modal-count').val();
                 form.photos[counter].ending = $('#modal-ending').val();
@@ -527,9 +587,13 @@
                 counter++;
             });
 
+            //Aktualizacja podsumowania
             form.updateParams();
+
+            //Czyszczenie widoku
             $('#photos').html('');
 
+            //Dodanie na nowo
             form.photos.forEach(photo => {
                 $('#photos').append(photo.getCard());
             });
