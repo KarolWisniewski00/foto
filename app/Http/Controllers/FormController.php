@@ -21,10 +21,24 @@ class FormController extends Controller
         $file = $request->file('file');
         $imageData = base64_encode(file_get_contents($file));
         $fileId = uniqid();
+        $fileName = time() . rand(1, 100) . '.png';
+
+        // Zdekodowanie danych base64
+        $image_data = base64_decode($imageData);
+        $path = public_path('photo/' . $fileName);
+
+        // Upewnij się, że katalog "photo" istnieje w "public"
+        if (!file_exists(public_path('photo'))) {
+            mkdir(public_path('photo'), 0755, true); // Tworzy katalog, jeśli nie istnieje
+        }
+
+        // Zapisanie pliku na dysku
+        file_put_contents($path, $image_data);
 
         return response()->json([
             'imageData' => $imageData,
             'fileId' => $fileId,
+            'fileName' => $fileName,
         ]);
     }
 
@@ -45,24 +59,12 @@ class FormController extends Controller
         foreach ($photos as $key => $element) {
             $file_name = time() . rand(1, 100) . '.png';
             $photo = new Photo();
-            $photo->file_name = $file_name;
+            $photo->file_name = $element['fileName'];
             $photo->order_id = $order->id;
             $photo->format = $element['format'];
             $photo->ending = $element['ending'];
             $photo->count = $element['count'];
             $photo->save();
-
-            // Zdekodowanie danych base64
-            $image_data = base64_decode($element['src']);
-            $path = public_path('photo/' . $file_name);
-
-            // Upewnij się, że katalog "photo" istnieje w "public"
-            if (!file_exists(public_path('photo'))) {
-                mkdir(public_path('photo'), 0755, true); // Tworzy katalog, jeśli nie istnieje
-            }
-
-            // Zapisanie pliku na dysku
-            file_put_contents($path, $image_data);
         }
         foreach ($rows as $key => $value) {
             $item = new Item();

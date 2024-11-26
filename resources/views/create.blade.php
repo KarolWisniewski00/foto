@@ -28,7 +28,9 @@
                     <option selected value="10x15">
                         10x15 cm
                     </option>
-                    <option value="13x18">13x18 cm</option>
+                    <option value="15x21">
+                        15x21 cm
+                    </option>
                 </select>
             </div>
             <div class="w-full">
@@ -182,7 +184,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     class Photo {
-        constructor(id, src, form, keys, keysEnd) {
+        constructor(id, src, form, keys, keysEnd, fileName) {
             const self = this;
             self.src = src;
             self.id = id;
@@ -192,6 +194,7 @@
             self.count = 1;
             self.keys = keys;
             self.keysEnd = keysEnd;
+            self.fileName = fileName;
             self.viewSizesOptions = '';
             self.viewEndingsOptions = '';
         }
@@ -231,6 +234,7 @@
         getCard() {
             const self = this;
             self.updateViewSizesOptions();
+            self.updateViewEndingsOptions();
             return `
             <div id="${self.id}" class="flex flex-col p-4 w-full h-full bg-zinc-800 rounded-lg border border-zinc-700 hover:bg-zinc-900">
                 <img id="" class-"mx-auto w-full h-auto rounded-lg" alt="" src="data:image/jpeg;base64,${self.src}">
@@ -295,20 +299,20 @@
                         price: 0.70
                     },
                 ],
-                '13x18': [{
+                '15x21': [{
                         start: 0,
-                        end: 20,
-                        price: 1.20
-                    },
-                    {
-                        start: 21,
                         end: 50,
-                        price: 1.10
+                        price: 1.90
                     },
                     {
                         start: 51,
                         end: 100,
-                        price: 0.90
+                        price: 1.80
+                    },
+                    {
+                        start: 101,
+                        end: 200,
+                        price: 1.60
                     },
                 ],
             };
@@ -370,6 +374,12 @@
                     }
                 });
 
+                if(psc == null && counter > 100){
+                    const last = self.priceList[type][self.priceList[type].length - 1];
+                    price += last.price * counter;
+                    psc = last.price;
+                }
+
                 //dodaj rekord do podsumowania
                 if (price.toFixed(2) == 0) {
                     $('#' + type).html('');
@@ -387,7 +397,7 @@
             self.photos.forEach(photo => {
                 listphotosSend.push({
                     count: photo.count,
-                    src: photo.src,
+                    fileName: photo.fileName,
                     format: photo.size,
                     ending: photo.ending,
                 });
@@ -404,10 +414,10 @@
             $('#total-price').val(prices.toFixed(2));
         }
         //Dodaje zdjecia do formularza
-        addPhoto(id, src) {
+        addPhoto(id, src, fileName) {
             const self = this;
             const keys = Object.keys(self.priceList);
-            const photo = new Photo(id, src, self, keys, ['blysk', 'mat']); //Stwórz obiekt JBC TO TU PODEPNIJ ENDINGI DYNAMICZNE
+            const photo = new Photo(id, src, self, keys, ['blysk', 'mat'], fileName); //Stwórz obiekt JBC TO TU PODEPNIJ ENDINGI DYNAMICZNE
             $('#photos').append(photo.getCard()); //Dodaj do html'a
             self.photos.push(photo); //Dodaj do obiektu formularz do zmiennej typu lista (siebie)
 
@@ -530,7 +540,7 @@
             init: function() {
                 this.on("success", function(file, response) {
                     form.showAll();
-                    form.addPhoto(response['fileId'], response['imageData']);
+                    form.addPhoto(response['fileId'], response['imageData'], response['fileName']);
                     this.removeFile(file);
                 });
                 this.on("error", function(file, response) {
@@ -576,8 +586,8 @@
         });
 
         // Zapisz zmiany
-        var counter = 0;
         $('#modal-save').on('click', function() {
+            var counter = 0;
 
             //Aktualizacja obiektów
             form.photos.forEach(photo => {
@@ -593,9 +603,65 @@
             //Czyszczenie widoku
             $('#photos').html('');
 
+
             //Dodanie na nowo
             form.photos.forEach(photo => {
+                $(document).off('click', '#' + photo.id + '-del');
+                $(document).off('click', '#' + photo.id + '-plus');
+                $(document).off('click', '#' + photo.id + '-minus');
+                $(document).off('click', '#' + photo.id + '-count');
+                $(document).off('click', '#' + photo.id + '-size');
+                $(document).off('click', '#' + photo.id + '-ending');
+
                 $('#photos').append(photo.getCard());
+
+                //Aktywacja przycisku "Usuwanie"
+                $(document).on('click', '#' + photo.id + '-del', function() {
+                    form.removePhoto(photo.id);
+                });
+                //Aktywacja przycisku "Dodawanie"
+                $(document).on('click', '#' + photo.id + '-plus', function() {
+                    var val = $('#' + photo.id + '-count').val();
+                    val = parseInt(val);
+                    val += 1;
+                    $('#' + photo.id + '-count').val(val);
+
+                    form.updateObjPhotos(val, photo.id);
+                    form.updateParams();
+                });
+                //Aktywacja przycisku "Obejmowanie"
+                $(document).on('click', '#' + photo.id + '-minus', function() {
+                    var val = $('#' + photo.id + '-count').val();
+                    val = parseInt(val);
+                    val -= 1;
+                    if (val < 1) {
+                        val = 1; // Wyzeruj wartość, jeśli jest nieprawidłowa
+                    }
+                    $('#' + photo.id + '-count').val(val);
+
+                    form.updateObjPhotos(val, photo.id);
+                    form.updateParams();
+                });
+                //Aktywacja Na każdą zmiane inputa "Odbitki"
+                $('#' + photo.id + '-count').on('change', function() {
+                    const val = $('#' + photo.id + '-count').val();
+
+                    form.updateObjPhotos(val, photo.id);
+                    form.updateParams();
+                });
+
+                $('#' + photo.id + '-size').on('change', function() {
+                    const val = $('#' + photo.id + '-size').val();
+
+                    form.updateObjPhotosSize(val, photo.id);
+                    form.updateParams();
+                });
+                $('#' + photo.id + '-ending').on('change', function() {
+                    const val = $('#' + photo.id + '-ending').val();
+
+                    form.updateObjPhotosEnding(val, photo.id);
+                    form.updateParams();
+                });
             });
         });
     });

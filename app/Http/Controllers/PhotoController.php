@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Photo;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\File;
 class PhotoController extends Controller
 {
     public function index()
@@ -13,7 +13,8 @@ class PhotoController extends Controller
         $folderSizeBytes = $this->getFolderSize(public_path('photo'));
         // Przekładamy rozmiar na bardziej przyjazny format (MB)
         $folderSizeMB = number_format($folderSizeBytes / (1024 * 1024), 2);
-        return view('dashboard', compact('photos','folderSizeMB'));
+        $photos = $this->getFiles(public_path('photo'));
+        return view('dashboard', compact('photos', 'folderSizeMB'));
     }
     public function delete(Photo $photo)
     {
@@ -39,25 +40,40 @@ class PhotoController extends Controller
         return redirect()->route('group')->with('success', 'Zdjęcie zostało usunięte.');
     }
 
-    public function download(Photo $photo)
+    public function download($photo)
     {
+        // Pobierz ścieżkę pliku z żądania
+        $fullPath = public_path($photo);
+
+        // Sprawdź, czy plik istnieje
+        if (File::exists($fullPath)) {
+            // Usuń plik
+            File::delete($fullPath);
+
+            // Zwrot informacji o sukcesie
+            return redirect()->back()->with('success', 'Plik został usunięty.');
+        }
+
+        // Zwrot informacji o błędzie
+        return redirect()->back()->with('error', 'Plik nie istnieje.');
+
         // Znalezienie zdjęcia na podstawie ID
-        $photo = Photo::find($photo->id);
-
-        // Sprawdzenie, czy zdjęcie istnieje
-        if (!$photo) {
-            return response()->json(['fail' => 'Zdjęcie nie zostało znalezione.'], 404);
-        }
-
-        // Ścieżka do pliku w katalogu public/photo
-        $filePath = public_path('photo/' . $photo->file_name);
-
-        // Sprawdzenie, czy plik istnieje
-        if (!file_exists($filePath)) {
-            return response()->json(['fail' => 'Plik nie istnieje.'], 404);
-        }
-
-        // Pobranie pliku
-        return response()->download($filePath);
+        //$photo = Photo::find($photo->id);
+        //
+        //// Sprawdzenie, czy zdjęcie istnieje
+        //if (!$photo) {
+        //    return response()->json(['fail' => 'Zdjęcie nie zostało znalezione.'], 404);
+        //}
+        //
+        //// Ścieżka do pliku w katalogu public/photo
+        //$filePath = public_path('photo/' . $photo->file_name);
+        //
+        //// Sprawdzenie, czy plik istnieje
+        //if (!file_exists($filePath)) {
+        //    return response()->json(['fail' => 'Plik nie istnieje.'], 404);
+        //}
+        //
+        //// Pobranie pliku
+        //return response()->download($filePath);
     }
 }

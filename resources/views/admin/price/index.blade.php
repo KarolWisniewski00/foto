@@ -178,7 +178,7 @@
                             <!---->
                             <tr class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
                                 <td class="px-6 py-4">
-                                13x18
+                                15x21
                                 </td>
                                 <td class="px-6 py-4">
                                     <div class="font-medium text-gray-800 dark:text-gray-50">
