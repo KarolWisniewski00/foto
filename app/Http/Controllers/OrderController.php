@@ -97,7 +97,6 @@ class OrderController extends Controller
                         $zip->addEmptyDir("{$item->name}/{$ending}/{$count}");
                         // Filtrujemy zdjęcia, które odpowiadają danemu endingowi
                         $countPhotos = $itemPhotos->where('count', $count);
-
                         // Dodajemy zdjęcia do odpowiedniego folderu i podfolderu
                         foreach ($countPhotos as $photo) {
                             // Ścieżka do zdjęcia w folderze publicznym
@@ -106,7 +105,7 @@ class OrderController extends Controller
                             // Sprawdzamy, czy zdjęcie istnieje w folderze publicznym
                             if (file_exists($filePath)) {
                                 // Dodajemy zdjęcie do folderu w ZIP
-                                $zip->addFile($filePath, "{$item->name}/{$ending}/{$count}/{$photo->file_name}");
+                                $zip->addFile($filePath, "{$photo->format}/{$photo->ending}/{$photo->count}/{$photo->file_name}");
                             }
                         }
                     }

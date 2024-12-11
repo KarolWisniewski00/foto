@@ -81,6 +81,13 @@
                                 </td>
                             </tr>
                             @endforeach
+                            <!--pomyślnie przesłano, szczegóły w wiadomości mailowej
+                            <tr class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+                                <td class="px-6 py-4 flex flex-col items-center justify-center text-center" colspan="7">
+                                    <img src="{{ asset('photo/nodata.svg') }}" alt="Brak danych">
+                                    <p>Lista jest pusta.</p>
+                                </td>
+                            </tr>-->
                         </tbody>
                     </table>
                     <div class="px-4 py-2">

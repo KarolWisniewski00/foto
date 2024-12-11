@@ -57,7 +57,6 @@ class FormController extends Controller
         $order->save();
 
         foreach ($photos as $key => $element) {
-            $file_name = time() . rand(1, 100) . '.png';
             $photo = new Photo();
             $photo->file_name = $element['fileName'];
             $photo->order_id = $order->id;

@@ -128,7 +128,9 @@
                     <label for="name" class="block my-2 text-sm font-medium text-white">Imię i nazwisko</label>
                     <input type="text" id="name" name="name" class=" my-2 bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" required />
                 </div>
+                <div class="info-info text-red-500 text-center">
 
+                </div>
                 <input type="hidden" name="photos" id="photos-send" value="">
                 <input type="hidden" name="rows" id="rows" value="">
                 <input type="hidden" name="total_price" id="total-price" value="">
@@ -155,6 +157,29 @@
 
 
             </div>
+            @if(Session::has('success'))
+            <div class="flex items-center p-4 mb-4 text-sm border-2 rounded-lg bg-zinc-900 text-green-400 border-green-800" role="alert">
+                <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                </svg>
+                <span class="sr-only">Info</span>
+                <div class="text-xl">
+                    <span class="font-medium">Zamówienie zostało wysłane</span><br>
+                    O zmianie statusu realizacji Twojego zamówienia, będziemy informować w email.
+                </div>
+            </div>
+            @endif
+            @if(Session::has('fail'))
+            <div class="flex items-center p-4 mb-4 text-sm border-2 rounded-lg bg-zinc-900 text-red-400 border-red-800" role="alert">
+                <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                </svg>
+                <span class="sr-only">Info</span>
+                <div class="text-xl">
+                    {{Session::get('fail')}}
+                </div>
+            </div>
+            @endif
             <h1 class="font-bold md:leading-tight text-white text-xl my-2 text-center">Miejsce do przesyłania zdjęć</h1>
             <form id="myid" enctype="multipart/form-data" method="POST" action="{{ route('form.store') }}" class="my-3 grid-cols-5 gap-4 dropzone w-full border-2 border-zinc-700 border-dashed rounded-lg cursor-pointer bg-zinc-900">
                 @csrf
@@ -168,6 +193,9 @@
                     </div>
                 </label>
             </form>
+            <div class="info-info text-red-500 text-center">
+
+            </div>
             <div class="del rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 mt-4 flex flex-row gap-4 items-center justify-center mb-4 w-full">
                 <button id="submit2" type="button"
                     class="text-center md:text-start py-4 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-green-600 text-green-50 hover:bg-green-700 focus:outline-none focus:bg-green-700 disabled:opacity-50 disabled:pointer-events-none">
@@ -374,7 +402,7 @@
                     }
                 });
 
-                if(psc == null && counter > 100){
+                if (psc == null && counter > 100) {
                     const last = self.priceList[type][self.priceList[type].length - 1];
                     price += last.price * counter;
                     psc = last.price;
@@ -412,6 +440,8 @@
             //pokaż sumę ceny
             $('#resume-price').html(prices.toFixed(2));
             $('#total-price').val(prices.toFixed(2));
+            const str = String(count);
+            $('.info-info').html('Poczekaj, aż załadują się wszystkie zdjęcia - wczytano: ' + str);
         }
         //Dodaje zdjecia do formularza
         addPhoto(id, src, fileName) {
