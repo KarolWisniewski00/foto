@@ -4,7 +4,7 @@
 <div class="px-3 lg:px-0">
     <div class="px-3 lg:px-0 bg-zinc-900 rounded-lg max-w-4xl mx-auto sm:px-4 lg:px-8 md:mt-5 flex flex-col md:flex-row md:justify-between gap-3 md:gap-5">
         <div class="flex flex-col md:flex-row justify-center py-3 w-full h-full gap-5">
-            <img src="{{asset('photo/main.jpg')}}" class="rounded-lg my-2 w-auto h-full">
+            <img src="{{asset('asset/main.jpg')}}" class="rounded-lg my-2 w-auto h-full">
             <div class="flex flex-col">
                 <h1 class="font-bold md:leading-tight text-zinc-200 text-3xl text-center my-2">FOTO RABSZTYN</h1>
                 <div class="flex flex-col justify-center gap-5 mb-2">

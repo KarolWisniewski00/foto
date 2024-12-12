@@ -14,12 +14,18 @@
                 <h1 class="mt-8 mb-4 text-2xl font-medium text-gray-800 dark:text-gray-200 mx-4">
                     Zajęte miejsce {{$folderSizeMB}} MB
                 </h1>
+                <a href="{{route('photo.delete.all')}}" class="mt-8 mb-4 mx-4 text-red-500 hover:text-white border border-red-600 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                    <i class="fa-solid fa-trash"></i> Usuń wszystkie
+                </a>
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-8 mx-4">
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-300">
                             <tr>
                                 <th scope="col" class="px-6 py-3">
                                     Zdjęcie
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Ścieżka
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     Usuwanie
@@ -37,6 +43,9 @@
                                     <img src="{{ asset($relativePath) }}" alt="" class="img-fluid" height="48px" width="48px">
                                 </td>
                                 <td class="px-6 py-4">
+                                    {{$photo}}
+                                </td>
+                                <td class="px-6 py-4">
                                     <form action="{{route('photo.delete', $relativePath)}}" method="POST" onsubmit="return confirm('Czy na pewno chcesz usunąć to zdjęcie?');">
                                         @csrf
                                         @method('DELETE')
@@ -49,6 +58,8 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <div class="px-4 py-2">
+                    </div>
                 </div>
             </div>
         </div>

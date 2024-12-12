@@ -210,6 +210,7 @@
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<input type="hidden" id="data" value="{{$data}}">
 <script>
     class Photo {
         constructor(id, src, form, keys, keysEnd, fileName) {
@@ -310,40 +311,7 @@
             self.counter = 0;
             self.photos = [];
             self.types = [];
-            self.priceList = {
-                '10x15': [{
-                        start: 0,
-                        end: 50,
-                        price: 0.80
-                    },
-                    {
-                        start: 51,
-                        end: 100,
-                        price: 0.75
-                    },
-                    {
-                        start: 101,
-                        end: 150,
-                        price: 0.70
-                    },
-                ],
-                '15x21': [{
-                        start: 0,
-                        end: 50,
-                        price: 1.90
-                    },
-                    {
-                        start: 51,
-                        end: 100,
-                        price: 1.80
-                    },
-                    {
-                        start: 101,
-                        end: 200,
-                        price: 1.60
-                    },
-                ],
-            };
+            self.priceList =  JSON.parse($('#data').val());
         }
         //Pokazuje elementy formularza
         showAll() {

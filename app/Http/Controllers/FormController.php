@@ -2,18 +2,40 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\FormMail;
 use App\Models\Item;
 use App\Models\Order;
 use App\Models\Photo;
+use App\Models\Setting;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
 class FormController extends Controller
 {
     public function create()
     {
-        return view('create');
+        $setting = Setting::all();
+
+        // Podział na nadrzędne i podrzędne
+        $formattedData = [];
+        $name = null;
+        foreach ($setting as $price) {
+            if ($price->type == 0) {
+                // Nadrzędny element
+                $name = $price->name;
+                $formattedData[$price->name] = [];
+            }else{
+                array_push($formattedData[$name],[
+                    'start' => $price->copies_start,
+                    'end' => $price->copies_end,
+                    'price' => $price->price,
+                ]);
+            }
+        }
+        // Przekazanie do widoku
+        return view('create', ['data' => json_encode($formattedData)]);
     }
 
     public function store(Request $request)
@@ -74,6 +96,9 @@ class FormController extends Controller
             $item->count = $value['count'];
             $item->save();
         }
+
+        $email = new FormMail($order->id);
+        Mail::to($request->email)->send($email->build());
         return redirect()->route('form.create')->with('success', 'Zdjęcia zostały przesłane');
     }
 }

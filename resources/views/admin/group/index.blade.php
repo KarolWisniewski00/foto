@@ -34,6 +34,9 @@
                                     Cena
                                 </th>
                                 <th scope="col" class="px-6 py-3">
+                                    Pobierz zamówienie ZIP
+                                </th>
+                                <th scope="col" class="px-6 py-3">
                                     Podgląd
                                 </th>
                                 <th scope="col" class="px-6 py-3">
@@ -66,6 +69,9 @@
                                     <div class="font-medium text-gray-800 dark:text-gray-50">
                                         {{$order->total_price}}
                                     </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <a href="{{route('order.download.zip', $order)}}" class="py-2.5 px-5 text-sm font-medium text-white focus:outline-none bg-orange-500 rounded-lg hover:bg-orange-600 focus:z-10 focus:ring-4 focus:ring-orange-300"><i class="fa-solid fa-file-zipper"></i></a>
                                 </td>
                                 <td class="px-6 py-4">
                                     <a href="{{route('order.show', $order)}}" class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-600 focus:z-10 focus:ring-4 focus:ring-gray-200"><i class="fa-solid fa-eye"></i></a>

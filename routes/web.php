@@ -46,9 +46,16 @@ Route::middleware([
             Route::get('/', [PhotoController::class, 'index'])->name('photo');
             Route::get('/download/{photo}', [PhotoController::class, 'download'])->name('photo.download');
             Route::delete('/delete/{photo}', [PhotoController::class, 'delete'])->name('photo.delete');
+            Route::get('/delete-all', [PhotoController::class, 'deleteAll'])->name('photo.delete.all');
+
         });
         Route::prefix('price')->group(function () {
             Route::get('/', [PriceController::class, 'index'])->name('price');
+            Route::get('create-up', [PriceController::class, 'createUp'])->name('price.create.up');
+            Route::get('create-down', [PriceController::class, 'createDown'])->name('price.create.down');
+            Route::post('store-up', [PriceController::class, 'storeUp'])->name('price.store.up');
+            Route::post('store-down', [PriceController::class, 'storeDown'])->name('price.store.down');
+            Route::delete('delete/{setting}', [PriceController::class, 'delete'])->name('price.delete');
         });
     });
 });
