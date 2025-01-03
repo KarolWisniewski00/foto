@@ -61,9 +61,20 @@ class PhotoController extends Controller
     public function deleteAll()
     {
         $photos = $this->getFiles(public_path('photo'));
+        $photosDB = Photo::all();
 
         foreach ($photos as $key => $value) {
-            File::delete($value);
+            $strval = strval(basename($value));
+            $isInOrder = false;
+            foreach ($photosDB as $keyDB => $valueDB) {
+                $strvalDB = strval($valueDB->file_name);
+                if ($strval === $strvalDB) {
+                    $isInOrder = true;
+                }
+            }
+            if ($isInOrder == false) {
+                File::delete($value);
+            }
         }
 
         return redirect()->back()->with('success', 'Wszystkie zdjęcia zostały usunięte.');

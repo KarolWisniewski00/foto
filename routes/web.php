@@ -55,6 +55,10 @@ Route::middleware([
             Route::get('create-down', [PriceController::class, 'createDown'])->name('price.create.down');
             Route::post('store-up', [PriceController::class, 'storeUp'])->name('price.store.up');
             Route::post('store-down', [PriceController::class, 'storeDown'])->name('price.store.down');
+            Route::get('edit-up/{setting}', [PriceController::class, 'editUp'])->name('price.edit.up');
+            Route::get('edit-down/{setting}', [PriceController::class, 'editDown'])->name('price.edit.down');
+            Route::put('update-up/{setting}', [PriceController::class, 'updateUp'])->name('price.update.up');
+            Route::put('update-down/{setting}', [PriceController::class, 'updateDown'])->name('price.update.down');
             Route::delete('delete/{setting}', [PriceController::class, 'delete'])->name('price.delete');
         });
     });

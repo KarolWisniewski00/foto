@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Setting;
+use Hamcrest\Core\Set;
 use Illuminate\Http\Request;
 
 class PriceController extends Controller
@@ -60,6 +61,41 @@ class PriceController extends Controller
         } else {
             return redirect()->route('price')
                 ->with('fail', 'Wystąpił błąd podczas usuwania treści.');
+        }
+    }
+    public function editUp(Setting $setting)
+    {
+        return view('admin.price.editup', compact('setting'));
+    }
+    public function editDown(Setting $setting)
+    {
+        return view('admin.price.editdown', compact('setting'));
+    }
+    public function updateUp(Request $request, Setting $setting)
+    {
+        $res = $setting->update([
+            'name' => $request->name,
+        ]);
+
+        if ($res) {
+            return redirect()->route('price')->with('success', 'Treść została pomyślnie zaktualizowana.');
+        } else {
+            return redirect()->route('price.edit.up', $setting)->with('fail', 'Treść nie została zaktualizowana.');
+        }
+    }
+
+    public function updateDown(Request $request, Setting $setting)
+    {
+        $res = $setting->update([
+            'copies_start' => $request->start,
+            'copies_end' => $request->end,
+            'price' => $request->price,
+        ]);
+
+        if ($res) {
+            return redirect()->route('price')->with('success', 'Treść została pomyślnie zaktualizowana.');
+        } else {
+            return redirect()->route('price.edit.down', $setting)->with('fail', 'Treść nie została zaktualizowana.');
         }
     }
 }

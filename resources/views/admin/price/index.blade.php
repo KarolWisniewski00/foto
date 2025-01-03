@@ -59,12 +59,19 @@
                                         {{$setting->price}}
                                     </div>
                                 </td>
+                                @if($setting->name == null)
                                 <td class="px-6 py-4">
-                                    <!--
-                                    <a href="" class="py-2.5 px-5 text-sm font-medium text-white focus:outline-none bg-blue-500 rounded-lg border border-blue-700 hover:bg-blue-600 focus:z-10 focus:ring-4 focus:ring-blue-700">
+                                    <a href="{{route('price.edit.down' , $setting)}}" class="py-2.5 px-5 text-sm font-medium text-white focus:outline-none bg-blue-500 rounded-lg border border-blue-700 hover:bg-blue-600 focus:z-10 focus:ring-4 focus:ring-blue-700">
                                         <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>-->
+                                    </a>
                                 </td>
+                                @else
+                                <td class="px-6 py-4">
+                                    <a href="{{route('price.edit.up' , $setting)}}" class="py-2.5 px-5 text-sm font-medium text-white focus:outline-none bg-sky-500 rounded-lg border border-sky-700 hover:bg-sky-600 focus:z-10 focus:ring-4 focus:ring-sky-700">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                </td>
+                                @endif
                                 <td class="px-6 py-4">
                                     <form action="{{route('price.delete', $setting)}}" method="POST" onsubmit="return confirm('Czy na pewno chcesz usunąć tą treść?');">
                                         @csrf
