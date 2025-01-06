@@ -25,14 +25,14 @@
                     Rozmiar
                 </label>
                 <select id="modal-size" class="bg-zinc-800 border border-zinc-700 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option selected value="10x15">
-                        10x15 cm
+                    @foreach($names as $key => $value)
+                    <option value="{{$value}}">
+                        {{$value}} cm
                     </option>
-                    <option value="15x21">
-                        15x21 cm
-                    </option>
+                    @endforeach
                 </select>
             </div>
+            
             <div class="w-full">
                 <label for="modal-ending" class="block mb-4 text-sm font-medium text-white">
                     Wykończenie

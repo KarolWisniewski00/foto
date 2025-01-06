@@ -21,13 +21,15 @@ class FormController extends Controller
         // Podział na nadrzędne i podrzędne
         $formattedData = [];
         $name = null;
+        $names = [];
         foreach ($setting as $price) {
             if ($price->type == 0) {
                 // Nadrzędny element
                 $name = $price->name;
                 $formattedData[$price->name] = [];
-            }else{
-                array_push($formattedData[$name],[
+                array_push($names, $name);
+            } else {
+                array_push($formattedData[$name], [
                     'start' => $price->copies_start,
                     'end' => $price->copies_end,
                     'price' => $price->price,
@@ -35,7 +37,7 @@ class FormController extends Controller
             }
         }
         // Przekazanie do widoku
-        return view('create', ['data' => json_encode($formattedData)]);
+        return view('create', ['data' => json_encode($formattedData), 'names' => $names]);
     }
 
     public function store(Request $request)
